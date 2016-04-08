@@ -4812,6 +4812,16 @@ steal("can/util/vdom/document", "can/util/vdom/build_fragment","can/view/stache"
 
             equal(frag.firstChild.getAttribute("f"),"f", "able to set f");
 		});
+
+		test("indices are working (#2361)", function(){
+			var template = can.stache('<div>{{#list}} item #{{%key}}{{/list}}</div>');
+
+      var frag = template(new can.Map({
+				list: [ 1, 2, 3 ]
+      }));
+
+      equal(frag.firstChild.innerHTML, 'item #0 item #1 item #2')
+		});
 		
 		// PUT NEW TESTS RIGHT BEFORE THIS!
 	}
