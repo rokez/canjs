@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!--####################################################################
+	THIS IS A GENERATED FILE -- ANY CHANGES MADE WILL BE OVERWRITTEN
+
+	INSTEAD CHANGE:
+	source: [object Object]
+	@function can-view-scope.attr
+######################################################################## -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<link rel="stylesheet" type="text/css" href="./static/bundles/bit-docs-site/static.css">
+	
+</head>
+
+<body>
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger">Menu</label>
+  <header><nav class="navbar">
+	<a class="brand" href="../index.html">CanJS</a>
+
+	<ul class="bitovi-menu">
+		<li class="dropdown">
+			<a href="http://bitovi.com" class="bitovi icon-bits">Bitovi</a>
+			<ul class="dropdown-menu">
+				<li><a href="http://bitovi.com">Bitovi.com</a></li>
+				<li><a href="http://bitovi.com/blog/">Blog</a></li>
+				<li><a href="http://bitovi.com/consulting/">Consulting</a></li>
+				<li><a href="http://bitovi.com/training/">Training</a></li>
+				<li><a href="http://bitovi.com/open-source/">Open Source</a></li>
+			</ul>
+		</li>
+	</ul>
+
+	<ul class="navbar-items">
+		<li class="dropdown">
+				<a href="http://github.com/canjs/canjs">Github</a>
+				<ul class="dropdown-menu">
+      		<li><a href="http://github.com/canjs/can-connect">can-connect</a></li>
+					<li><a href=".">can-set</a></li>
+					<li><a href=".">can-compute</a></li>
+					<li><a href=".">can-component</a></li>
+				</ul>
+		</li>
+		<li>
+			<a href="https://gitter.im/canjs/canjs">Chat</a>
+		</li>
+		<li>
+			<a href="http://forums.donejs.com/c/canjs">Forum</a>
+		</li>
+	</ul>
+
+</nav>
+</header>
+  	<div class="main-container">
+  
+  	<nav class="sidebar">
+    
+        
+
+    
+</nav>
+  
+
+  <div class="content-container">
+    <article>
+    	
+    		<section class="title">
+	<h1>attr</h1>
+</section>
+
+    	
+
+        
+
+    	
+    		
+    			<section class="description">
+    
+</section>
+
+    		
+    	
+
+    
+    
+    
+    <div class="signature">
+  <h2 class="signature-title"><code>scope.attr(key)</code></h2>
+  
+  
+  
+  <div class="parameters">
+    <h3 class="parameters-title">Parameters</h3>
+      <ol>
+        
+          <li><b>key</b> <code>{can-mustache.key}</code>: <p>A dot seperated path.  Use <code>&quot;.&quot;</code> if you have a
+property name that includes a dot.</p>
+</li>
+        
+      </ol>
+  </div>
+  
+  
+  
+  <ul>
+      <li><b>returns</b>  <code>{*}</code>: <p>The found value or undefined if no value is found.</p>
+ </li>
+  </ul>
+  
+  
+  
+</div>
+    
+    
+    
+
+
+    	
+    		
+    			<section class="body">
+    <h2>Use</h2>
+<p><code>scope.attr(key)</code> looks up a value in the current scope's
+context, if a value is not found, parent scope's context
+will be explored.</p>
+<pre><code>var list = [{name: &quot;Justin&quot;},{name: &quot;Brian&quot;}],
+    justin = list[0];
+
+var curScope = new Scope(list).add(justin);
+
+curScope.attr(&quot;name&quot;); //-&gt; &quot;Justin&quot;
+curScope.attr(&quot;length&quot;); //-&gt; 2
+</code></pre>
+<p>Prefixing a key with <code>&quot;./&quot;</code> prevents any parent scope look ups.
+Prefixing a key with one or more <code>&quot;../&quot;</code> shifts the lookup path
+that many levels up.</p>
+<pre><code>var list = [{name: &quot;Justin&quot;},{name: &quot;Brian&quot;}];
+list.name = &quot;Programmers&quot;;
+list.surname = &quot;CanJS&quot;;
+
+var justin = list[0];
+var brian = list[1];
+var curScope = new Scope(list).add(justin).add(brian);
+
+curScope.attr(&quot;name&quot;); //-&gt; &quot;Brian&quot;
+curScope.attr(&quot;surname&quot;); //-&gt; &quot;CanJS&quot;
+curScope.attr(&quot;./surname&quot;); //-&gt; undefined
+curScope.attr(&quot;../name&quot;); //-&gt; &quot;Justin&quot;
+curScope.attr(&quot;../surname&quot;); //-&gt; &quot;CanJS&quot;
+curScope.attr(&quot;.././surname&quot;); //-&gt; &quot;undefined&quot;
+curScope.attr(&quot;../../name&quot;); //-&gt; &quot;Programmers&quot;
+</code></pre>
+
+</section>
+
+    		
+    	
+
+    </article>
+  </div>
+</div>
+
+  <footer><p>CanJS is part of <a href="http://donejs.com">DoneJS</a>. Created and maintained by the open source team at <a href="http://bitovi.com">Bitovi</a>. <strong>Currently v3.0.0.</strong></p></footer>
+	<script type="text/javascript">
+		var docObject = {"content":"<div class=\"main-container\">\n  \n  \t<nav class=\"sidebar\">\n    \n        \n\n    \n</nav>\n  \n\n  <div class=\"content-container\">\n    <article>\n    \t\n    \t\t<section class=\"title\">\n\t<h1>attr</h1>\n</section>\n\n    \t\n\n        \n\n    \t\n    \t\t\n    \t\t\t<section class=\"description\">\n    \n</section>\n\n    \t\t\n    \t\n\n    \n    \n    \n    <div class=\"signature\">\n  <h2 class=\"signature-title\"><code>scope.attr(key)</code></h2>\n  \n  \n  \n  <div class=\"parameters\">\n    <h3 class=\"parameters-title\">Parameters</h3>\n      <ol>\n        \n          <li><b>key</b> <code>{can-mustache.key}</code>: <p>A dot seperated path.  Use <code>&quot;.&quot;</code> if you have a\nproperty name that includes a dot.</p>\n</li>\n        \n      </ol>\n  </div>\n  \n  \n  \n  <ul>\n      <li><b>returns</b>  <code>{*}</code>: <p>The found value or undefined if no value is found.</p>\n </li>\n  </ul>\n  \n  \n  \n</div>\n    \n    \n    \n\n\n    \t\n    \t\t\n    \t\t\t<section class=\"body\">\n    <h2>Use</h2>\n<p><code>scope.attr(key)</code> looks up a value in the current scope's\ncontext, if a value is not found, parent scope's context\nwill be explored.</p>\n<pre><code>var list = [{name: &quot;Justin&quot;},{name: &quot;Brian&quot;}],\n    justin = list[0];\n\nvar curScope = new Scope(list).add(justin);\n\ncurScope.attr(&quot;name&quot;); //-&gt; &quot;Justin&quot;\ncurScope.attr(&quot;length&quot;); //-&gt; 2\n</code></pre>\n<p>Prefixing a key with <code>&quot;./&quot;</code> prevents any parent scope look ups.\nPrefixing a key with one or more <code>&quot;../&quot;</code> shifts the lookup path\nthat many levels up.</p>\n<pre><code>var list = [{name: &quot;Justin&quot;},{name: &quot;Brian&quot;}];\nlist.name = &quot;Programmers&quot;;\nlist.surname = &quot;CanJS&quot;;\n\nvar justin = list[0];\nvar brian = list[1];\nvar curScope = new Scope(list).add(justin).add(brian);\n\ncurScope.attr(&quot;name&quot;); //-&gt; &quot;Brian&quot;\ncurScope.attr(&quot;surname&quot;); //-&gt; &quot;CanJS&quot;\ncurScope.attr(&quot;./surname&quot;); //-&gt; undefined\ncurScope.attr(&quot;../name&quot;); //-&gt; &quot;Justin&quot;\ncurScope.attr(&quot;../surname&quot;); //-&gt; &quot;CanJS&quot;\ncurScope.attr(&quot;.././surname&quot;); //-&gt; &quot;undefined&quot;\ncurScope.attr(&quot;../../name&quot;); //-&gt; &quot;Programmers&quot;\n</code></pre>\n\n</section>\n\n    \t\t\n    \t\n\n    </article>\n  </div>\n</div>\n","src":{"path":"node_modules/can-view-scope/docs/attr.md"},"description":"\n","title":"attr","name":"can-view-scope.attr","type":"function","signatures":[{"code":"scope.attr(key)","description":"\n","params":[{"types":[{"type":"can-mustache.key"}],"name":"key","description":"A dot seperated path.  Use `\".\"` if you have a\nproperty name that includes a dot.\n"}],"returns":{"types":[{"type":"*"}],"description":"The found value or undefined if no value is found.\n"}}],"_curParam":{"types":[{"type":"can-mustache.key"}],"name":"key","description":"A dot seperated path.  Use `\".\"` if you have a\nproperty name that includes a dot.\n"},"_curReturn":{"types":[{"type":"*"}],"description":"The found value or undefined if no value is found.\n"},"comment":" "};
+	</script>
+
+	
+		<script>
+		  steal = {
+		    instantiated: {
+		      "bundles/bit-docs-site/static.css!$css" : null
+		    }
+		  }
+		</script>
+		<script type='text/javascript'
+				data-main="bit-docs-site/static"
+				src="./static/node_modules/steal/steal.production.js"></script>
+	
+</body>
+
+</html>

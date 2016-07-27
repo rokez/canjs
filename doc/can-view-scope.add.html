@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!--####################################################################
+	THIS IS A GENERATED FILE -- ANY CHANGES MADE WILL BE OVERWRITTEN
+
+	INSTEAD CHANGE:
+	source: [object Object]
+	@function can-view-scope.add
+######################################################################## -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<link rel="stylesheet" type="text/css" href="./static/bundles/bit-docs-site/static.css">
+	
+</head>
+
+<body>
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger">Menu</label>
+  <header><nav class="navbar">
+	<a class="brand" href="../index.html">CanJS</a>
+
+	<ul class="bitovi-menu">
+		<li class="dropdown">
+			<a href="http://bitovi.com" class="bitovi icon-bits">Bitovi</a>
+			<ul class="dropdown-menu">
+				<li><a href="http://bitovi.com">Bitovi.com</a></li>
+				<li><a href="http://bitovi.com/blog/">Blog</a></li>
+				<li><a href="http://bitovi.com/consulting/">Consulting</a></li>
+				<li><a href="http://bitovi.com/training/">Training</a></li>
+				<li><a href="http://bitovi.com/open-source/">Open Source</a></li>
+			</ul>
+		</li>
+	</ul>
+
+	<ul class="navbar-items">
+		<li class="dropdown">
+				<a href="http://github.com/canjs/canjs">Github</a>
+				<ul class="dropdown-menu">
+      		<li><a href="http://github.com/canjs/can-connect">can-connect</a></li>
+					<li><a href=".">can-set</a></li>
+					<li><a href=".">can-compute</a></li>
+					<li><a href=".">can-component</a></li>
+				</ul>
+		</li>
+		<li>
+			<a href="https://gitter.im/canjs/canjs">Chat</a>
+		</li>
+		<li>
+			<a href="http://forums.donejs.com/c/canjs">Forum</a>
+		</li>
+	</ul>
+
+</nav>
+</header>
+  	<div class="main-container">
+  
+  	<nav class="sidebar">
+    
+        
+
+    
+</nav>
+  
+
+  <div class="content-container">
+    <article>
+    	
+    		<section class="title">
+	<h1>add</h1>
+</section>
+
+    	
+
+        
+
+    	
+    		
+    			<section class="description">
+    
+</section>
+
+    		
+    	
+
+    
+    
+    
+    <div class="signature">
+  <h2 class="signature-title"><code>scope.add(context)</code></h2>
+  <p>Add an object (which could be another Scope, a Map, or a plain object) to the scope.</p>
+<pre><code class="language-js">var scope = new Scope({ foo: &quot;bar&quot; }).add({ baz: &quot;qux&quot; });
+
+scope.attr(&quot;baz&quot;); // -&gt; &quot;qux&quot;
+</code></pre>
+
+  
+  
+  <div class="parameters">
+    <h3 class="parameters-title">Parameters</h3>
+      <ol>
+        
+          <li><b>context</b> <code>{*}</code>: <p>The context of the new scope object.</p>
+</li>
+        
+      </ol>
+  </div>
+  
+  
+  
+  <ul>
+      <li><b>returns</b>  <code>{<a href="can-view-scope.html" >can-view-scope</a>}</code>: <p>A scope object.</p>
+ </li>
+  </ul>
+  
+  
+  
+</div>
+    
+    
+    
+
+
+    	
+    		
+    			<section class="body">
+    <h2>Use</h2>
+<p><code>scope.add(context)</code> creates a new scope object that
+first looks up values in context and then in the
+parent <code>scope</code> object.</p>
+<pre><code>var list = [{name: &quot;Justin&quot;},{name: &quot;Brian&quot;}],
+    justin = list[0];
+
+var curScope = new Scope(list).add(justin);
+
+curScope.attr(&quot;name&quot;) //-&gt; &quot;Justin&quot;
+curScope.attr(&quot;length&quot;) //-&gt; 2
+</code></pre>
+
+</section>
+
+    		
+    	
+
+    </article>
+  </div>
+</div>
+
+  <footer><p>CanJS is part of <a href="http://donejs.com">DoneJS</a>. Created and maintained by the open source team at <a href="http://bitovi.com">Bitovi</a>. <strong>Currently v3.0.0.</strong></p></footer>
+	<script type="text/javascript">
+		var docObject = {"content":"<div class=\"main-container\">\n  \n  \t<nav class=\"sidebar\">\n    \n        \n\n    \n</nav>\n  \n\n  <div class=\"content-container\">\n    <article>\n    \t\n    \t\t<section class=\"title\">\n\t<h1>add</h1>\n</section>\n\n    \t\n\n        \n\n    \t\n    \t\t\n    \t\t\t<section class=\"description\">\n    \n</section>\n\n    \t\t\n    \t\n\n    \n    \n    \n    <div class=\"signature\">\n  <h2 class=\"signature-title\"><code>scope.add(context)</code></h2>\n  <p>Add an object (which could be another Scope, a Map, or a plain object) to the scope.</p>\n<pre><code class=\"language-js\">var scope = new Scope({ foo: &quot;bar&quot; }).add({ baz: &quot;qux&quot; });\n\nscope.attr(&quot;baz&quot;); // -&gt; &quot;qux&quot;\n</code></pre>\n\n  \n  \n  <div class=\"parameters\">\n    <h3 class=\"parameters-title\">Parameters</h3>\n      <ol>\n        \n          <li><b>context</b> <code>{*}</code>: <p>The context of the new scope object.</p>\n</li>\n        \n      </ol>\n  </div>\n  \n  \n  \n  <ul>\n      <li><b>returns</b>  <code>{<a href=\"can-view-scope.html\" >can-view-scope</a>}</code>: <p>A scope object.</p>\n </li>\n  </ul>\n  \n  \n  \n</div>\n    \n    \n    \n\n\n    \t\n    \t\t\n    \t\t\t<section class=\"body\">\n    <h2>Use</h2>\n<p><code>scope.add(context)</code> creates a new scope object that\nfirst looks up values in context and then in the\nparent <code>scope</code> object.</p>\n<pre><code>var list = [{name: &quot;Justin&quot;},{name: &quot;Brian&quot;}],\n    justin = list[0];\n\nvar curScope = new Scope(list).add(justin);\n\ncurScope.attr(&quot;name&quot;) //-&gt; &quot;Justin&quot;\ncurScope.attr(&quot;length&quot;) //-&gt; 2\n</code></pre>\n\n</section>\n\n    \t\t\n    \t\n\n    </article>\n  </div>\n</div>\n","src":{"path":"node_modules/can-view-scope/docs/add.md"},"description":"\n","title":"add","name":"can-view-scope.add","type":"function","signatures":[{"code":"scope.add(context)","description":"\n\nAdd an object (which could be another Scope, a Map, or a plain object) to the scope.\n\n```js\nvar scope = new Scope({ foo: \"bar\" }).add({ baz: \"qux\" });\n\nscope.attr(\"baz\"); // -> \"qux\"\n```\n","params":[{"types":[{"type":"*"}],"name":"context","description":"The context of the new scope object.\n"}],"returns":{"types":[{"type":"can-view-scope"}],"description":"A scope object.\n"}}],"_curParam":{"types":[{"type":"*"}],"name":"context","description":"The context of the new scope object.\n"},"_curReturn":{"types":[{"type":"can-view-scope"}],"description":"A scope object.\n"},"comment":" "};
+	</script>
+
+	
+		<script>
+		  steal = {
+		    instantiated: {
+		      "bundles/bit-docs-site/static.css!$css" : null
+		    }
+		  }
+		</script>
+		<script type='text/javascript'
+				data-main="bit-docs-site/static"
+				src="./static/node_modules/steal/steal.production.js"></script>
+	
+</body>
+
+</html>

@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<!--####################################################################
+	THIS IS A GENERATED FILE -- ANY CHANGES MADE WILL BE OVERWRITTEN
+
+	INSTEAD CHANGE:
+	source: [object Object]
+	@function can-util/js/string/string.capitalize
+######################################################################## -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<link rel="stylesheet" type="text/css" href="../../../static/bundles/bit-docs-site/static.css">
+	
+</head>
+
+<body>
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger">Menu</label>
+  <header><nav class="navbar">
+	<a class="brand" href="../../../../index.html">CanJS</a>
+
+	<ul class="bitovi-menu">
+		<li class="dropdown">
+			<a href="http://bitovi.com" class="bitovi icon-bits">Bitovi</a>
+			<ul class="dropdown-menu">
+				<li><a href="http://bitovi.com">Bitovi.com</a></li>
+				<li><a href="http://bitovi.com/blog/">Blog</a></li>
+				<li><a href="http://bitovi.com/consulting/">Consulting</a></li>
+				<li><a href="http://bitovi.com/training/">Training</a></li>
+				<li><a href="http://bitovi.com/open-source/">Open Source</a></li>
+			</ul>
+		</li>
+	</ul>
+
+	<ul class="navbar-items">
+		<li class="dropdown">
+				<a href="http://github.com/canjs/canjs">Github</a>
+				<ul class="dropdown-menu">
+      		<li><a href="http://github.com/canjs/can-connect">can-connect</a></li>
+					<li><a href=".">can-set</a></li>
+					<li><a href=".">can-compute</a></li>
+					<li><a href=".">can-component</a></li>
+				</ul>
+		</li>
+		<li>
+			<a href="https://gitter.im/canjs/canjs">Chat</a>
+		</li>
+		<li>
+			<a href="http://forums.donejs.com/c/canjs">Forum</a>
+		</li>
+	</ul>
+
+</nav>
+</header>
+  	<div class="main-container">
+  
+  	<nav class="sidebar">
+    
+        
+	<ul>
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="page"
+							href="../../../can-core.html">
+							Core
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="page"
+							href="../../../can-ecosystem.html">
+							Ecosystem
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               parent
+                               expanded">
+						<a class="page"
+							href="../../../can-infrastructure.html">
+							Infrastructure
+						</a>
+						
+							
+	<ul>
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../../../can-event.html">
+							can-event
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../../../can-event/batch/batch.html">
+							can-event/batch/batch
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../../../can-observation.html">
+							can-observation
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               parent
+                               expanded">
+						<a class="page"
+							href="../../../can-util.html">
+							can-util
+						</a>
+						
+							
+	<ul>
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../../dom.html">
+							can-util/dom
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               parent
+                               expanded">
+						<a class="module"
+							href="../../js.html">
+							can-util/js
+						</a>
+						
+							
+	<ul>
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../assign/assign.html">
+							./assign/
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../base-url/base-url.html">
+							./base-url/
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../cid/cid.html">
+							./cid/
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../deep-assign/deep-assign.html">
+							./deep-assign/
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../deparam/deparam.html">
+							./deparam/
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../diff-object/diff-object.html">
+							./diff-object/
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../diff/diff.html">
+							./diff/
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../each/each.html">
+							./each/
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../global/global.html">
+							./global/
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../import/import.html">
+							./import/
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../is-array-like/is-array-like.html">
+							./is-array-like/
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../is-browser-window/is-browser-window.html">
+							./is-browser-window/
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../is-empty-object/is-empty-object.html">
+							./is-empty-object/
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../is-function.html">
+							./is-function
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../is-node/is-node.html">
+							./is-node/
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../is-plain-object/is-plain-object.html">
+							./is-plain-object/
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../is-promise/is-promise.html">
+							./is-promise/
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../is-string/is-string.html">
+							./is-string/
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../is-web-worker/is-web-worker.html">
+							./is-web-worker/
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../join-uris/join-uris.html">
+							./join-uris/
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../make-array/make-array.html">
+							./make-array/
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../param/param.html">
+							./param/
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../set-immediate/set-immediate.html">
+							./set-immediate/
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               parent
+                               expanded">
+						<a class="module"
+							href="string.html">
+							./string/
+						</a>
+						
+							
+	<ul>
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="function"
+							href="string.camelize.html">
+							string.camelize
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="current
+                               parent
+                               expanded">
+						<a class="function"
+							href="string.capitalize.html">
+							string.capitalize
+						</a>
+						
+							
+
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="function"
+							href="string.esc.html">
+							string.esc
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="function"
+							href="string.getObject.html">
+							string.getObject
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="function"
+							href="string.hyphenate.html">
+							string.hyphenate
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="property"
+							href="string.strReplacer.html">
+							string.strReplacer
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="property"
+							href="string.strUndHash.html">
+							string.strUndHash
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="function"
+							href="string.sub.html">
+							string.sub
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="function"
+							href="string.underscore.html">
+							string.underscore
+						</a>
+						
+					</li>
+				
+
+			
+		
+	</ul>
+
+
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../types/types.html">
+							./types/
+						</a>
+						
+					</li>
+				
+
+			
+		
+	</ul>
+
+
+						
+					</li>
+				
+
+			
+		
+	</ul>
+
+
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../../../can-view-callbacks.html">
+							can-view-callbacks
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../../../can-view-live.html">
+							can-view-live
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../../../can-view-parser.html">
+							can-view-parser
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../../../can-view-scope.html">
+							can-view-scope
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="../../../can-view-target.html">
+							can-view-target
+						</a>
+						
+					</li>
+				
+
+			
+		
+	</ul>
+
+
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="page"
+							href="../../../can-legacy.html">
+							Legacy
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="page"
+							href="../../../guides.html">
+							Guides
+						</a>
+						
+					</li>
+				
+
+			
+		
+	</ul>
+
+
+    
+</nav>
+  
+
+  <div class="content-container">
+    <article>
+    	
+    		<section class="title">
+	<h1>string.capitalize</h1>
+</section>
+
+    	
+
+        
+
+    	
+    		
+    	
+
+    
+    
+    
+    <div class="signature">
+  <h2 class="signature-title"><code>string.capitalize(s)</code></h2>
+  
+  
+  
+  <div class="parameters">
+    <h3 class="parameters-title">Parameters</h3>
+      <ol>
+        
+          <li><b>s</b> <code>{String}</code>: <p>the string to capitalize</p>
+</li>
+        
+      </ol>
+  </div>
+  
+  
+  
+  <ul>
+      <li><b>returns</b>  <code>{String}</code>: <p>the supplied string with the first character uppercased if it is a letter</p>
+<pre><code class="language-js">var string = require(&quot;can-util/js/string/string&quot;);
+
+console.log(string.capitalize(&quot;foo&quot;)); // -&gt; &quot;Foo&quot;
+console.log(string.capitalize(&quot;123&quot;)); // -&gt; &quot;123&quot;
+</code></pre>
+ </li>
+  </ul>
+  
+  
+  
+</div>
+    
+    
+    
+
+
+    	
+    		
+    	
+
+    </article>
+  </div>
+</div>
+
+  <footer><p>CanJS is part of <a href="http://donejs.com">DoneJS</a>. Created and maintained by the open source team at <a href="http://bitovi.com">Bitovi</a>. <strong>Currently v3.0.0.</strong></p></footer>
+	<script type="text/javascript">
+		var docObject = {"content":"<div class=\"main-container\">\n  \n  \t<nav class=\"sidebar\">\n    \n        \n\t<ul>\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"page\"\n\t\t\t\t\t\t\thref=\"../../../can-core.html\">\n\t\t\t\t\t\t\tCore\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"page\"\n\t\t\t\t\t\t\thref=\"../../../can-ecosystem.html\">\n\t\t\t\t\t\t\tEcosystem\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               parent\n                               expanded\">\n\t\t\t\t\t\t<a class=\"page\"\n\t\t\t\t\t\t\thref=\"../../../can-infrastructure.html\">\n\t\t\t\t\t\t\tInfrastructure\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t<ul>\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../../../can-event.html\">\n\t\t\t\t\t\t\tcan-event\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../../../can-event/batch/batch.html\">\n\t\t\t\t\t\t\tcan-event/batch/batch\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../../../can-observation.html\">\n\t\t\t\t\t\t\tcan-observation\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               parent\n                               expanded\">\n\t\t\t\t\t\t<a class=\"page\"\n\t\t\t\t\t\t\thref=\"../../../can-util.html\">\n\t\t\t\t\t\t\tcan-util\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t<ul>\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../../dom.html\">\n\t\t\t\t\t\t\tcan-util/dom\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               parent\n                               expanded\">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../../js.html\">\n\t\t\t\t\t\t\tcan-util/js\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t<ul>\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../assign/assign.html\">\n\t\t\t\t\t\t\t./assign/\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../base-url/base-url.html\">\n\t\t\t\t\t\t\t./base-url/\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../cid/cid.html\">\n\t\t\t\t\t\t\t./cid/\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../deep-assign/deep-assign.html\">\n\t\t\t\t\t\t\t./deep-assign/\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../deparam/deparam.html\">\n\t\t\t\t\t\t\t./deparam/\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../diff-object/diff-object.html\">\n\t\t\t\t\t\t\t./diff-object/\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../diff/diff.html\">\n\t\t\t\t\t\t\t./diff/\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../each/each.html\">\n\t\t\t\t\t\t\t./each/\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../global/global.html\">\n\t\t\t\t\t\t\t./global/\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../import/import.html\">\n\t\t\t\t\t\t\t./import/\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../is-array-like/is-array-like.html\">\n\t\t\t\t\t\t\t./is-array-like/\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../is-browser-window/is-browser-window.html\">\n\t\t\t\t\t\t\t./is-browser-window/\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../is-empty-object/is-empty-object.html\">\n\t\t\t\t\t\t\t./is-empty-object/\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../is-function.html\">\n\t\t\t\t\t\t\t./is-function\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../is-node/is-node.html\">\n\t\t\t\t\t\t\t./is-node/\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../is-plain-object/is-plain-object.html\">\n\t\t\t\t\t\t\t./is-plain-object/\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../is-promise/is-promise.html\">\n\t\t\t\t\t\t\t./is-promise/\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../is-string/is-string.html\">\n\t\t\t\t\t\t\t./is-string/\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../is-web-worker/is-web-worker.html\">\n\t\t\t\t\t\t\t./is-web-worker/\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../join-uris/join-uris.html\">\n\t\t\t\t\t\t\t./join-uris/\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../make-array/make-array.html\">\n\t\t\t\t\t\t\t./make-array/\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../param/param.html\">\n\t\t\t\t\t\t\t./param/\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../set-immediate/set-immediate.html\">\n\t\t\t\t\t\t\t./set-immediate/\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               parent\n                               expanded\">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"string.html\">\n\t\t\t\t\t\t\t./string/\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t<ul>\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"function\"\n\t\t\t\t\t\t\thref=\"string.camelize.html\">\n\t\t\t\t\t\t\tstring.camelize\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"current\n                               parent\n                               expanded\">\n\t\t\t\t\t\t<a class=\"function\"\n\t\t\t\t\t\t\thref=\"string.capitalize.html\">\n\t\t\t\t\t\t\tstring.capitalize\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"function\"\n\t\t\t\t\t\t\thref=\"string.esc.html\">\n\t\t\t\t\t\t\tstring.esc\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"function\"\n\t\t\t\t\t\t\thref=\"string.getObject.html\">\n\t\t\t\t\t\t\tstring.getObject\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"function\"\n\t\t\t\t\t\t\thref=\"string.hyphenate.html\">\n\t\t\t\t\t\t\tstring.hyphenate\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"property\"\n\t\t\t\t\t\t\thref=\"string.strReplacer.html\">\n\t\t\t\t\t\t\tstring.strReplacer\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"property\"\n\t\t\t\t\t\t\thref=\"string.strUndHash.html\">\n\t\t\t\t\t\t\tstring.strUndHash\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"function\"\n\t\t\t\t\t\t\thref=\"string.sub.html\">\n\t\t\t\t\t\t\tstring.sub\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"function\"\n\t\t\t\t\t\t\thref=\"string.underscore.html\">\n\t\t\t\t\t\t\tstring.underscore\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t</ul>\n\n\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../types/types.html\">\n\t\t\t\t\t\t\t./types/\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t</ul>\n\n\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t</ul>\n\n\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../../../can-view-callbacks.html\">\n\t\t\t\t\t\t\tcan-view-callbacks\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../../../can-view-live.html\">\n\t\t\t\t\t\t\tcan-view-live\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../../../can-view-parser.html\">\n\t\t\t\t\t\t\tcan-view-parser\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../../../can-view-scope.html\">\n\t\t\t\t\t\t\tcan-view-scope\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"../../../can-view-target.html\">\n\t\t\t\t\t\t\tcan-view-target\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t</ul>\n\n\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"page\"\n\t\t\t\t\t\t\thref=\"../../../can-legacy.html\">\n\t\t\t\t\t\t\tLegacy\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"page\"\n\t\t\t\t\t\t\thref=\"../../../guides.html\">\n\t\t\t\t\t\t\tGuides\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t</ul>\n\n\n    \n</nav>\n  \n\n  <div class=\"content-container\">\n    <article>\n    \t\n    \t\t<section class=\"title\">\n\t<h1>string.capitalize</h1>\n</section>\n\n    \t\n\n        \n\n    \t\n    \t\t\n    \t\n\n    \n    \n    \n    <div class=\"signature\">\n  <h2 class=\"signature-title\"><code>string.capitalize(s)</code></h2>\n  \n  \n  \n  <div class=\"parameters\">\n    <h3 class=\"parameters-title\">Parameters</h3>\n      <ol>\n        \n          <li><b>s</b> <code>{String}</code>: <p>the string to capitalize</p>\n</li>\n        \n      </ol>\n  </div>\n  \n  \n  \n  <ul>\n      <li><b>returns</b>  <code>{String}</code>: <p>the supplied string with the first character uppercased if it is a letter</p>\n<pre><code class=\"language-js\">var string = require(&quot;can-util/js/string/string&quot;);\n\nconsole.log(string.capitalize(&quot;foo&quot;)); // -&gt; &quot;Foo&quot;\nconsole.log(string.capitalize(&quot;123&quot;)); // -&gt; &quot;123&quot;\n</code></pre>\n </li>\n  </ul>\n  \n  \n  \n</div>\n    \n    \n    \n\n\n    \t\n    \t\t\n    \t\n\n    </article>\n  </div>\n</div>\n","type":"function","name":"can-util/js/string/string.capitalize","parent":"can-util/js/string/string","src":{"line":128,"codeLine":141,"path":"node_modules/can-util/js/string/string.js"},"description":"","title":"string.capitalize","signatures":[{"code":"string.capitalize(s)","description":"","params":[{"types":[{"type":"String"}],"name":"s","description":"the string to capitalize"}],"returns":{"types":[{"type":"String"}],"description":"the supplied string with the first character uppercased if it is a letter\n\n```js\nvar string = require(\"can-util/js/string/string\");\n\nconsole.log(string.capitalize(\"foo\")); // -> \"Foo\"\nconsole.log(string.capitalize(\"123\")); // -> \"123\"\n```\n "}}],"_curParam":{"types":[{"type":"String"}],"name":"s","description":"the string to capitalize"},"_curReturn":{"types":[{"type":"String"}],"description":"the supplied string with the first character uppercased if it is a letter\n\n```js\nvar string = require(\"can-util/js/string/string\");\n\nconsole.log(string.capitalize(\"foo\")); // -> \"Foo\"\nconsole.log(string.capitalize(\"123\")); // -> \"123\"\n```\n "}};
+	</script>
+
+	
+		<script>
+		  steal = {
+		    instantiated: {
+		      "bundles/bit-docs-site/static.css!$css" : null
+		    }
+		  }
+		</script>
+		<script type='text/javascript'
+				data-main="bit-docs-site/static"
+				src="../../../static/node_modules/steal/steal.production.js"></script>
+	
+</body>
+
+</html>

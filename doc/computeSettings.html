@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!--####################################################################
+	THIS IS A GENERATED FILE -- ANY CHANGES MADE WILL BE OVERWRITTEN
+
+	INSTEAD CHANGE:
+	source: [object Object]
+	@typedef computeSettings
+######################################################################## -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<link rel="stylesheet" type="text/css" href="./static/bundles/bit-docs-site/static.css">
+	
+</head>
+
+<body>
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger">Menu</label>
+  <header><nav class="navbar">
+	<a class="brand" href="../index.html">CanJS</a>
+
+	<ul class="bitovi-menu">
+		<li class="dropdown">
+			<a href="http://bitovi.com" class="bitovi icon-bits">Bitovi</a>
+			<ul class="dropdown-menu">
+				<li><a href="http://bitovi.com">Bitovi.com</a></li>
+				<li><a href="http://bitovi.com/blog/">Blog</a></li>
+				<li><a href="http://bitovi.com/consulting/">Consulting</a></li>
+				<li><a href="http://bitovi.com/training/">Training</a></li>
+				<li><a href="http://bitovi.com/open-source/">Open Source</a></li>
+			</ul>
+		</li>
+	</ul>
+
+	<ul class="navbar-items">
+		<li class="dropdown">
+				<a href="http://github.com/canjs/canjs">Github</a>
+				<ul class="dropdown-menu">
+      		<li><a href="http://github.com/canjs/can-connect">can-connect</a></li>
+					<li><a href=".">can-set</a></li>
+					<li><a href=".">can-compute</a></li>
+					<li><a href=".">can-component</a></li>
+				</ul>
+		</li>
+		<li>
+			<a href="https://gitter.im/canjs/canjs">Chat</a>
+		</li>
+		<li>
+			<a href="http://forums.donejs.com/c/canjs">Forum</a>
+		</li>
+	</ul>
+
+</nav>
+</header>
+  	<div class="main-container">
+  
+  	<nav class="sidebar">
+    
+        
+
+    
+</nav>
+  
+
+  <div class="content-container">
+    <article>
+    	
+    		<section class="title">
+	<h1>computeSettings</h1>
+</section>
+
+    	
+
+        
+
+    	
+    		
+    			<section class="description">
+    
+</section>
+
+    		
+    	
+
+    
+    
+    
+    <div class="signature">
+  <h2 class="signature-title"><code>Object</code></h2>
+  
+  
+  
+  
+  
+  
+  
+  <div class="options">
+  <h3>Options</h3>
+    <ul>
+    
+      <li>
+        <b>get</b> <code>{function}</code>:
+        <p>A function that retrieves and returns the current value of the compute.</p>
+
+      </li>
+    
+      <li>
+        <b>set</b> <code>{function(newVal, oldVal)}</code>:
+        <p>A function that is used when setting a new value of the compute.</p>
+<p>A function that is called when a compute is called with an argument. The function is passed
+the first argumented passed to [can.computed compute] and the current value. If
+<code>set</code> returns a value, it is used to compare to the current value of the compute. Otherwise,
+<code>get</code> is called to get the current value of the compute and that value is used
+to determine if the compute has changed values.</p>
+<p><code>newVal</code> is the value being set, while <code>oldVal</code> is the previous value in the compute.</p>
+
+      </li>
+    
+      <li>
+        <b>on</b> <code>{function(updated)}</code>:
+        <p>Called to setup binding to dependency events. Call <code>updated</code> when the compute's value needs to be updated.</p>
+
+      </li>
+    
+      <li>
+        <b>off</b> <code>{function(function)}</code>:
+        <p>Called to teardown binding.</p>
+
+      </li>
+    
+    </ul>
+  </div>
+  
+</div>
+    
+    
+    
+
+
+    	
+    		
+    	
+
+    </article>
+  </div>
+</div>
+
+  <footer><p>CanJS is part of <a href="http://donejs.com">DoneJS</a>. Created and maintained by the open source team at <a href="http://bitovi.com">Bitovi</a>. <strong>Currently v3.0.0.</strong></p></footer>
+	<script type="text/javascript">
+		var docObject = {"content":"<div class=\"main-container\">\n  \n  \t<nav class=\"sidebar\">\n    \n        \n\n    \n</nav>\n  \n\n  <div class=\"content-container\">\n    <article>\n    \t\n    \t\t<section class=\"title\">\n\t<h1>computeSettings</h1>\n</section>\n\n    \t\n\n        \n\n    \t\n    \t\t\n    \t\t\t<section class=\"description\">\n    \n</section>\n\n    \t\t\n    \t\n\n    \n    \n    \n    <div class=\"signature\">\n  <h2 class=\"signature-title\"><code>Object</code></h2>\n  \n  \n  \n  \n  \n  \n  \n  <div class=\"options\">\n  <h3>Options</h3>\n    <ul>\n    \n      <li>\n        <b>get</b> <code>{function}</code>:\n        <p>A function that retrieves and returns the current value of the compute.</p>\n\n      </li>\n    \n      <li>\n        <b>set</b> <code>{function(newVal, oldVal)}</code>:\n        <p>A function that is used when setting a new value of the compute.</p>\n<p>A function that is called when a compute is called with an argument. The function is passed\nthe first argumented passed to [can.computed compute] and the current value. If\n<code>set</code> returns a value, it is used to compare to the current value of the compute. Otherwise,\n<code>get</code> is called to get the current value of the compute and that value is used\nto determine if the compute has changed values.</p>\n<p><code>newVal</code> is the value being set, while <code>oldVal</code> is the previous value in the compute.</p>\n\n      </li>\n    \n      <li>\n        <b>on</b> <code>{function(updated)}</code>:\n        <p>Called to setup binding to dependency events. Call <code>updated</code> when the compute's value needs to be updated.</p>\n\n      </li>\n    \n      <li>\n        <b>off</b> <code>{function(function)}</code>:\n        <p>Called to teardown binding.</p>\n\n      </li>\n    \n    </ul>\n  </div>\n  \n</div>\n    \n    \n    \n\n\n    \t\n    \t\t\n    \t\n\n    </article>\n  </div>\n</div>\n","src":{"path":"node_modules/can-compute/docs/compute_settings.md"},"description":"\n","type":"typedef","title":"computeSettings","types":[{"type":"Object","options":[{"name":"get","types":[{"type":"function","returns":{"types":[{"type":"undefined"}]},"params":[]}],"description":"A function that retrieves and returns the current value of the compute."},{"name":"set","types":[{"type":"function","returns":{"types":[{"type":"*"}]},"params":[{"types":[{"type":"*"}],"name":"newVal"},{"types":[{"type":"*"}],"name":"oldVal"}]}],"description":"A function that is used when setting a new value of the compute.\n\nA function that is called when a compute is called with an argument. The function is passed\nthe first argumented passed to [can.computed compute] and the current value. If\n`set` returns a value, it is used to compare to the current value of the compute. Otherwise,\n`get` is called to get the current value of the compute and that value is used\nto determine if the compute has changed values.\n\n`newVal` is the value being set, while `oldVal` is the previous value in the compute.\n"},{"name":"on","types":[{"type":"function","returns":{"types":[{"type":"undefined"}]},"params":[{"types":[{"type":"function","returns":{"types":[{"type":"undefined"}]},"params":[]}],"name":"updated"}]}],"description":"Called to setup binding to dependency events. Call `updated` when the compute's value needs to be updated.\n"},{"name":"off","types":[{"type":"function","returns":{"types":[{"type":"undefined"}]},"params":[{"types":[{"type":"function","returns":{"types":[{"type":"undefined"}]},"params":[]}]}]}],"description":"Called to teardown binding.\n"}]}],"name":"computeSettings","release":"2.1","parent":"can.compute"};
+	</script>
+
+	
+		<script>
+		  steal = {
+		    instantiated: {
+		      "bundles/bit-docs-site/static.css!$css" : null
+		    }
+		  }
+		</script>
+		<script type='text/javascript'
+				data-main="bit-docs-site/static"
+				src="./static/node_modules/steal/steal.production.js"></script>
+	
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!--####################################################################
+	THIS IS A GENERATED FILE -- ANY CHANGES MADE WILL BE OVERWRITTEN
+
+	INSTEAD CHANGE:
+	source: [object Object]
+	@function can.batch.trigger
+######################################################################## -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<link rel="stylesheet" type="text/css" href="./static/bundles/bit-docs-site/static.css">
+	
+</head>
+
+<body>
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger">Menu</label>
+  <header><nav class="navbar">
+	<a class="brand" href="../index.html">CanJS</a>
+
+	<ul class="bitovi-menu">
+		<li class="dropdown">
+			<a href="http://bitovi.com" class="bitovi icon-bits">Bitovi</a>
+			<ul class="dropdown-menu">
+				<li><a href="http://bitovi.com">Bitovi.com</a></li>
+				<li><a href="http://bitovi.com/blog/">Blog</a></li>
+				<li><a href="http://bitovi.com/consulting/">Consulting</a></li>
+				<li><a href="http://bitovi.com/training/">Training</a></li>
+				<li><a href="http://bitovi.com/open-source/">Open Source</a></li>
+			</ul>
+		</li>
+	</ul>
+
+	<ul class="navbar-items">
+		<li class="dropdown">
+				<a href="http://github.com/canjs/canjs">Github</a>
+				<ul class="dropdown-menu">
+      		<li><a href="http://github.com/canjs/can-connect">can-connect</a></li>
+					<li><a href=".">can-set</a></li>
+					<li><a href=".">can-compute</a></li>
+					<li><a href=".">can-component</a></li>
+				</ul>
+		</li>
+		<li>
+			<a href="https://gitter.im/canjs/canjs">Chat</a>
+		</li>
+		<li>
+			<a href="http://forums.donejs.com/c/canjs">Forum</a>
+		</li>
+	</ul>
+
+</nav>
+</header>
+  	<div class="main-container">
+  
+  	<nav class="sidebar">
+    
+        
+
+    
+</nav>
+  
+
+  <div class="content-container">
+    <article>
+    	
+    		<section class="title">
+	<h1>can.batch.trigger</h1>
+</section>
+
+    	
+
+        
+
+    	
+    		
+    			<section class="description">
+    <p>Trigger an event to be added to the current batch.</p>
+
+</section>
+
+    		
+    	
+
+    
+    
+    
+    <div class="signature">
+  <h2 class="signature-title"><code>can.batch.trigger(item, event [, args])</code></h2>
+  
+  
+  
+  <div class="parameters">
+    <h3 class="parameters-title">Parameters</h3>
+      <ol>
+        
+          <li><b>item</b> <code>{can.Map}</code>: <p>the target of the event</p>
+</li>
+        
+          <li><b>event</b> <code>{String|Object}</code>: <p>the type of event, or an event object with a type given</p>
+</li>
+        
+          <li><b>args</b> <code>{Array}</code>: <p>the parameters to trigger the event with.</p>
+</li>
+        
+      </ol>
+  </div>
+  
+  
+  
+  
+  
+</div>
+    
+    
+    
+
+
+    	
+    		
+    			<section class="body">
+    <p>If events are currently being batched, calling <code>can.batch.trigger</code> adds an event
+to the batch. If events are not currently being batched, the event is triggered
+immediately.</p>
+
+</section>
+
+    		
+    	
+
+    </article>
+  </div>
+</div>
+
+  <footer><p>CanJS is part of <a href="http://donejs.com">DoneJS</a>. Created and maintained by the open source team at <a href="http://bitovi.com">Bitovi</a>. <strong>Currently v3.0.0.</strong></p></footer>
+	<script type="text/javascript">
+		var docObject = {"content":"<div class=\"main-container\">\n  \n  \t<nav class=\"sidebar\">\n    \n        \n\n    \n</nav>\n  \n\n  <div class=\"content-container\">\n    <article>\n    \t\n    \t\t<section class=\"title\">\n\t<h1>can.batch.trigger</h1>\n</section>\n\n    \t\n\n        \n\n    \t\n    \t\t\n    \t\t\t<section class=\"description\">\n    <p>Trigger an event to be added to the current batch.</p>\n\n</section>\n\n    \t\t\n    \t\n\n    \n    \n    \n    <div class=\"signature\">\n  <h2 class=\"signature-title\"><code>can.batch.trigger(item, event [, args])</code></h2>\n  \n  \n  \n  <div class=\"parameters\">\n    <h3 class=\"parameters-title\">Parameters</h3>\n      <ol>\n        \n          <li><b>item</b> <code>{can.Map}</code>: <p>the target of the event</p>\n</li>\n        \n          <li><b>event</b> <code>{String|Object}</code>: <p>the type of event, or an event object with a type given</p>\n</li>\n        \n          <li><b>args</b> <code>{Array}</code>: <p>the parameters to trigger the event with.</p>\n</li>\n        \n      </ol>\n  </div>\n  \n  \n  \n  \n  \n</div>\n    \n    \n    \n\n\n    \t\n    \t\t\n    \t\t\t<section class=\"body\">\n    <p>If events are currently being batched, calling <code>can.batch.trigger</code> adds an event\nto the batch. If events are not currently being batched, the event is triggered\nimmediately.</p>\n\n</section>\n\n    \t\t\n    \t\n\n    </article>\n  </div>\n</div>\n","type":"function","name":"can.batch.trigger","parent":"can.batch","src":{"line":221,"codeLine":235,"path":"node_modules/can-event/batch/batch.js"},"description":"Trigger an event to be added to the current batch. ","title":"","signatures":[{"code":"can.batch.trigger(item, event [, args])","description":"","params":[{"types":[{"type":"can.Map"}],"name":"item","description":"the target of the event"},{"types":[{"type":"String"},{"type":"Object","options":[{"name":"type","types":[{"type":"String"}]}]}],"name":"event","description":"the type of event, or an event object with a type given"},{"types":[{"type":"Array","options":[]}],"optional":true,"name":"args","description":"the parameters to trigger the event with.\n"}]}],"_curParam":{"types":[{"type":"Array","options":[]}],"optional":true,"name":"args","description":"the parameters to trigger the event with.\n"},"comment":" "};
+	</script>
+
+	
+		<script>
+		  steal = {
+		    instantiated: {
+		      "bundles/bit-docs-site/static.css!$css" : null
+		    }
+		  }
+		</script>
+		<script type='text/javascript'
+				data-main="bit-docs-site/static"
+				src="./static/node_modules/steal/steal.production.js"></script>
+	
+</body>
+
+</html>

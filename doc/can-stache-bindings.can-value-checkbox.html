@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<!--####################################################################
+	THIS IS A GENERATED FILE -- ANY CHANGES MADE WILL BE OVERWRITTEN
+
+	INSTEAD CHANGE:
+	source: [object Object]
+	@function can-stache-bindings.can-value-checkbox
+######################################################################## -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<link rel="stylesheet" type="text/css" href="./static/bundles/bit-docs-site/static.css">
+	
+</head>
+
+<body>
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger">Menu</label>
+  <header><nav class="navbar">
+	<a class="brand" href="../index.html">CanJS</a>
+
+	<ul class="bitovi-menu">
+		<li class="dropdown">
+			<a href="http://bitovi.com" class="bitovi icon-bits">Bitovi</a>
+			<ul class="dropdown-menu">
+				<li><a href="http://bitovi.com">Bitovi.com</a></li>
+				<li><a href="http://bitovi.com/blog/">Blog</a></li>
+				<li><a href="http://bitovi.com/consulting/">Consulting</a></li>
+				<li><a href="http://bitovi.com/training/">Training</a></li>
+				<li><a href="http://bitovi.com/open-source/">Open Source</a></li>
+			</ul>
+		</li>
+	</ul>
+
+	<ul class="navbar-items">
+		<li class="dropdown">
+				<a href="http://github.com/canjs/canjs">Github</a>
+				<ul class="dropdown-menu">
+      		<li><a href="http://github.com/canjs/can-connect">can-connect</a></li>
+					<li><a href=".">can-set</a></li>
+					<li><a href=".">can-compute</a></li>
+					<li><a href=".">can-component</a></li>
+				</ul>
+		</li>
+		<li>
+			<a href="https://gitter.im/canjs/canjs">Chat</a>
+		</li>
+		<li>
+			<a href="http://forums.donejs.com/c/canjs">Forum</a>
+		</li>
+	</ul>
+
+</nav>
+</header>
+  	<div class="main-container">
+  
+  	<nav class="sidebar">
+    
+        
+	<ul>
+		
+			
+				
+					<li class="current
+                               parent
+                               expanded">
+						<a class="function"
+							href="can-stache-bindings.can-value-checkbox.html">
+							input type=checkbox
+						</a>
+						
+							
+
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="function"
+							href="can-stache-bindings.can-value-radio.html">
+							input type=radio
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="function"
+							href="can-stache-bindings.can-value-select.html">
+							select
+						</a>
+						
+					</li>
+				
+
+			
+		
+	</ul>
+
+
+    
+</nav>
+  
+
+  <div class="content-container">
+    <article>
+    	
+    		<section class="title">
+	<h1>input type=checkbox</h1>
+</section>
+
+    	
+
+        
+
+    	
+    		
+    			<section class="description">
+    <p>Cross bind a value to a checkbox.</p>
+
+</section>
+
+    		
+    	
+
+    
+    
+    
+    <div class="signature">
+  <h2 class="signature-title"><code><input type='checkbox' can-value='KEY' can-true-value='TRUEVALUE' can-false-value='FALSEVALUE'/></code></h2>
+  <p>Cross binds the checked property to a true or false value.</p>
+
+  
+  
+  <div class="parameters">
+    <h3 class="parameters-title">Parameters</h3>
+      <ol>
+        
+          <li><b>KEY</b> <code>{can-mustache.key}</code>: <p>A named value in the current scope.</p>
+</li>
+        
+          <li><b>TRUEVALUE</b> <code>{String}</code>: <p>Used to set the checked value of <code>KEY</code>.</p>
+</li>
+        
+          <li><b>FALSEVALUE</b> <code>{String}</code>: <p>Used to set the unchecked value of <code>KEY</code>.</p>
+</li>
+        
+      </ol>
+  </div>
+  
+  
+  
+  
+  
+</div>
+    
+    
+    
+
+
+    	
+    		
+    			<section class="body">
+    <h2>Use</h2>
+<div class='demo_wrapper' data-demo-src='can/view/bindings/doc/input-checkbox.html'></div>
+<h2>Using can-true-value</h2>
+<p>An alternative true and false value can be specified by setting <code>can-true-value</code> and
+<code>can-false-value</code> attributes.  This is used for setting up a &quot;boolean&quot; property that only has two possible valid values,
+whose values are modelled by the true/false checked property of a checkbox, as in the following example:</p>
+<pre><code>&lt;input type='checkbox' can-value='sex' can-true-value='male' can-false-value='female'/&gt;
+</code></pre>
+<p>In this case, the data passed in contains a 'sex' property which is either 'male' or 'female'. Specifying the string values for true and false in the attributes forces the data to two way bind using these string properties.</p>
+<div class='demo_wrapper' data-demo-src='can/view/bindings/doc/input-checkbox-trueval.html'></div>
+
+</section>
+
+    		
+    	
+
+    </article>
+  </div>
+</div>
+
+  <footer><p>CanJS is part of <a href="http://donejs.com">DoneJS</a>. Created and maintained by the open source team at <a href="http://bitovi.com">Bitovi</a>. <strong>Currently v3.0.0.</strong></p></footer>
+	<script type="text/javascript">
+		var docObject = {"content":"<div class=\"main-container\">\n  \n  \t<nav class=\"sidebar\">\n    \n        \n\t<ul>\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"current\n                               parent\n                               expanded\">\n\t\t\t\t\t\t<a class=\"function\"\n\t\t\t\t\t\t\thref=\"can-stache-bindings.can-value-checkbox.html\">\n\t\t\t\t\t\t\tinput type=checkbox\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"function\"\n\t\t\t\t\t\t\thref=\"can-stache-bindings.can-value-radio.html\">\n\t\t\t\t\t\t\tinput type=radio\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"function\"\n\t\t\t\t\t\t\thref=\"can-stache-bindings.can-value-select.html\">\n\t\t\t\t\t\t\tselect\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t</ul>\n\n\n    \n</nav>\n  \n\n  <div class=\"content-container\">\n    <article>\n    \t\n    \t\t<section class=\"title\">\n\t<h1>input type=checkbox</h1>\n</section>\n\n    \t\n\n        \n\n    \t\n    \t\t\n    \t\t\t<section class=\"description\">\n    <p>Cross bind a value to a checkbox.</p>\n\n</section>\n\n    \t\t\n    \t\n\n    \n    \n    \n    <div class=\"signature\">\n  <h2 class=\"signature-title\"><code><input type='checkbox' can-value='KEY' can-true-value='TRUEVALUE' can-false-value='FALSEVALUE'/></code></h2>\n  <p>Cross binds the checked property to a true or false value.</p>\n\n  \n  \n  <div class=\"parameters\">\n    <h3 class=\"parameters-title\">Parameters</h3>\n      <ol>\n        \n          <li><b>KEY</b> <code>{can-mustache.key}</code>: <p>A named value in the current scope.</p>\n</li>\n        \n          <li><b>TRUEVALUE</b> <code>{String}</code>: <p>Used to set the checked value of <code>KEY</code>.</p>\n</li>\n        \n          <li><b>FALSEVALUE</b> <code>{String}</code>: <p>Used to set the unchecked value of <code>KEY</code>.</p>\n</li>\n        \n      </ol>\n  </div>\n  \n  \n  \n  \n  \n</div>\n    \n    \n    \n\n\n    \t\n    \t\t\n    \t\t\t<section class=\"body\">\n    <h2>Use</h2>\n<div class='demo_wrapper' data-demo-src='can/view/bindings/doc/input-checkbox.html'></div>\n<h2>Using can-true-value</h2>\n<p>An alternative true and false value can be specified by setting <code>can-true-value</code> and\n<code>can-false-value</code> attributes.  This is used for setting up a &quot;boolean&quot; property that only has two possible valid values,\nwhose values are modelled by the true/false checked property of a checkbox, as in the following example:</p>\n<pre><code>&lt;input type='checkbox' can-value='sex' can-true-value='male' can-false-value='female'/&gt;\n</code></pre>\n<p>In this case, the data passed in contains a 'sex' property which is either 'male' or 'female'. Specifying the string values for true and false in the attributes forces the data to two way bind using these string properties.</p>\n<div class='demo_wrapper' data-demo-src='can/view/bindings/doc/input-checkbox-trueval.html'></div>\n\n</section>\n\n    \t\t\n    \t\n\n    </article>\n  </div>\n</div>\n","src":{"path":"node_modules/can-stache-bindings/docs/input-checkbox.md"},"description":"\nCross bind a value to a checkbox.\n","title":"input type=checkbox","name":"can-stache-bindings.can-value-checkbox","type":"function","parent":"can-stache-bindings.can-value","signatures":[{"code":"<input type='checkbox' can-value='KEY' can-true-value='TRUEVALUE' can-false-value='FALSEVALUE'/>","description":"\n\nCross binds the checked property to a true or false value.\n","params":[{"types":[{"type":"can-mustache.key"}],"name":"KEY","description":"A named value in the current scope.\n"},{"types":[{"type":"String"}],"optional":true,"name":"TRUEVALUE","description":"Used to set the checked value of `KEY`.\n"},{"types":[{"type":"String"}],"optional":true,"name":"FALSEVALUE","description":"Used to set the unchecked value of `KEY`.\n"}]}],"_curParam":{"types":[{"type":"String"}],"optional":true,"name":"FALSEVALUE","description":"Used to set the unchecked value of `KEY`.\n"},"comment":" "};
+	</script>
+
+	
+		<script>
+		  steal = {
+		    instantiated: {
+		      "bundles/bit-docs-site/static.css!$css" : null
+		    }
+		  }
+		</script>
+		<script type='text/javascript'
+				data-main="bit-docs-site/static"
+				src="./static/node_modules/steal/steal.production.js"></script>
+	
+</body>
+
+</html>

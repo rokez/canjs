@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!--####################################################################
+	THIS IS A GENERATED FILE -- ANY CHANGES MADE WILL BE OVERWRITTEN
+
+	INSTEAD CHANGE:
+	source: [object Object]
+	@function can.batch.start
+######################################################################## -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<link rel="stylesheet" type="text/css" href="./static/bundles/bit-docs-site/static.css">
+	
+</head>
+
+<body>
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger">Menu</label>
+  <header><nav class="navbar">
+	<a class="brand" href="../index.html">CanJS</a>
+
+	<ul class="bitovi-menu">
+		<li class="dropdown">
+			<a href="http://bitovi.com" class="bitovi icon-bits">Bitovi</a>
+			<ul class="dropdown-menu">
+				<li><a href="http://bitovi.com">Bitovi.com</a></li>
+				<li><a href="http://bitovi.com/blog/">Blog</a></li>
+				<li><a href="http://bitovi.com/consulting/">Consulting</a></li>
+				<li><a href="http://bitovi.com/training/">Training</a></li>
+				<li><a href="http://bitovi.com/open-source/">Open Source</a></li>
+			</ul>
+		</li>
+	</ul>
+
+	<ul class="navbar-items">
+		<li class="dropdown">
+				<a href="http://github.com/canjs/canjs">Github</a>
+				<ul class="dropdown-menu">
+      		<li><a href="http://github.com/canjs/can-connect">can-connect</a></li>
+					<li><a href=".">can-set</a></li>
+					<li><a href=".">can-compute</a></li>
+					<li><a href=".">can-component</a></li>
+				</ul>
+		</li>
+		<li>
+			<a href="https://gitter.im/canjs/canjs">Chat</a>
+		</li>
+		<li>
+			<a href="http://forums.donejs.com/c/canjs">Forum</a>
+		</li>
+	</ul>
+
+</nav>
+</header>
+  	<div class="main-container">
+  
+  	<nav class="sidebar">
+    
+        
+
+    
+</nav>
+  
+
+  <div class="content-container">
+    <article>
+    	
+    		<section class="title">
+	<h1>can.batch.start</h1>
+</section>
+
+    	
+
+        
+
+    	
+    		
+    			<section class="description">
+    <p>Begin an event batch.</p>
+
+</section>
+
+    		
+    	
+
+    
+    
+    
+    <div class="signature">
+  <h2 class="signature-title"><code>can.batch.start([batchStopHandler])</code></h2>
+  
+  
+  
+  <div class="parameters">
+    <h3 class="parameters-title">Parameters</h3>
+      <ol>
+        
+          <li><b>batchStopHandler</b> <code>{function}</code>: <p>a callback that gets called after all batched events have been called</p>
+</li>
+        
+      </ol>
+  </div>
+  
+  
+  
+  
+  
+</div>
+    
+    
+    
+
+
+    	
+    		
+    			<section class="body">
+    <p><code>can.batch.start</code> causes can.Map to begin an event batch. Until <code><a href="can.batch.stop.html">can.batch.stop</a></code> is called, any
+events that would result from calls to <code>[can.Map::attr attr]</code> are held back from firing. If you have
+lots of changes to make to can.Maps, batching them together can help performance &emdash; especially if
+those can.Maps are live-bound to the DOM.</p>
+<p>In this example, you can see how the <em>first</em> and <em>change</em> events are not fired (and their handlers
+are not called) until <code>can.batch.stop</code> is called.</p>
+<pre><code>var person = new can.Map({
+    first: 'Alexis',
+    last: 'Abril'
+});
+
+person.bind('first', function() {
+    console.log(&quot;First name changed.&quot;&quot;);
+}).bind('change', function() {
+    console.log(&quot;Something changed.&quot;);
+});
+
+can.batch.start();
+person.attr('first', 'Alex');
+console.log('Still in the batch.');
+can.batch.stop();
+
+// the log has:
+// Still in the batch.
+// First name changed.
+// Something changed.
+</code></pre>
+<p>You can also pass a callback to <code>can.batch.start</code> which will be called after all the events have
+been fired:</p>
+<pre><code>can.batch.start(function() {
+    console.log('The batch is over.');
+});
+person.attr('first', 'Izzy');
+console.log('Still in the batch.');
+can.batch.stop();
+
+// The console has:
+// Still in the batch.
+// First name changed.
+// Something changed.
+// The batch is over.
+</code></pre>
+<h2>Calling <code>can.batch.start</code> multiple times</h2>
+<p>If you call <code>can.batch.start</code> more than once, <code>can.batch.stop</code> needs to be called
+the same number of times before any batched events will fire. For ways
+to circumvent this process, see <a href="can.batch.stop.html">can.batch.stop</a>.</p>
+<p>Here is an example that demonstrates how events are affected by calling
+<code>can.batch.start</code> multiple times.</p>
+<pre><code>var addPeople = function(observable) {
+    can.batch.start();
+    observable.attr('a', 'Alice');
+    observable.attr('b', 'Bob');
+    observable.attr('e', 'Eve');
+    can.batch.stop();
+};
+
+// In a completely different place:
+var list = new can.Map();
+list.bind('change', function() {
+    console.log('The list changed.');
+});
+
+can.batch.start();
+addPeople(list);
+console.log('Still in the batch.');
+
+// Here, the console has:
+// Still in the batch.
+
+can.batch.stop();
+
+// Here, the console has:
+// Still in the batch.
+// The list changed.
+// The list changed.
+// The list changed.
+</code></pre>
+
+</section>
+
+    		
+    	
+
+    </article>
+  </div>
+</div>
+
+  <footer><p>CanJS is part of <a href="http://donejs.com">DoneJS</a>. Created and maintained by the open source team at <a href="http://bitovi.com">Bitovi</a>. <strong>Currently v3.0.0.</strong></p></footer>
+	<script type="text/javascript">
+		var docObject = {"content":"<div class=\"main-container\">\n  \n  \t<nav class=\"sidebar\">\n    \n        \n\n    \n</nav>\n  \n\n  <div class=\"content-container\">\n    <article>\n    \t\n    \t\t<section class=\"title\">\n\t<h1>can.batch.start</h1>\n</section>\n\n    \t\n\n        \n\n    \t\n    \t\t\n    \t\t\t<section class=\"description\">\n    <p>Begin an event batch.</p>\n\n</section>\n\n    \t\t\n    \t\n\n    \n    \n    \n    <div class=\"signature\">\n  <h2 class=\"signature-title\"><code>can.batch.start([batchStopHandler])</code></h2>\n  \n  \n  \n  <div class=\"parameters\">\n    <h3 class=\"parameters-title\">Parameters</h3>\n      <ol>\n        \n          <li><b>batchStopHandler</b> <code>{function}</code>: <p>a callback that gets called after all batched events have been called</p>\n</li>\n        \n      </ol>\n  </div>\n  \n  \n  \n  \n  \n</div>\n    \n    \n    \n\n\n    \t\n    \t\t\n    \t\t\t<section class=\"body\">\n    <p><code>can.batch.start</code> causes can.Map to begin an event batch. Until <code><a href=\"can.batch.stop.html\">can.batch.stop</a></code> is called, any\nevents that would result from calls to <code>[can.Map::attr attr]</code> are held back from firing. If you have\nlots of changes to make to can.Maps, batching them together can help performance &emdash; especially if\nthose can.Maps are live-bound to the DOM.</p>\n<p>In this example, you can see how the <em>first</em> and <em>change</em> events are not fired (and their handlers\nare not called) until <code>can.batch.stop</code> is called.</p>\n<pre><code>var person = new can.Map({\n    first: 'Alexis',\n    last: 'Abril'\n});\n\nperson.bind('first', function() {\n    console.log(&quot;First name changed.&quot;&quot;);\n}).bind('change', function() {\n    console.log(&quot;Something changed.&quot;);\n});\n\ncan.batch.start();\nperson.attr('first', 'Alex');\nconsole.log('Still in the batch.');\ncan.batch.stop();\n\n// the log has:\n// Still in the batch.\n// First name changed.\n// Something changed.\n</code></pre>\n<p>You can also pass a callback to <code>can.batch.start</code> which will be called after all the events have\nbeen fired:</p>\n<pre><code>can.batch.start(function() {\n    console.log('The batch is over.');\n});\nperson.attr('first', 'Izzy');\nconsole.log('Still in the batch.');\ncan.batch.stop();\n\n// The console has:\n// Still in the batch.\n// First name changed.\n// Something changed.\n// The batch is over.\n</code></pre>\n<h2>Calling <code>can.batch.start</code> multiple times</h2>\n<p>If you call <code>can.batch.start</code> more than once, <code>can.batch.stop</code> needs to be called\nthe same number of times before any batched events will fire. For ways\nto circumvent this process, see <a href=\"can.batch.stop.html\">can.batch.stop</a>.</p>\n<p>Here is an example that demonstrates how events are affected by calling\n<code>can.batch.start</code> multiple times.</p>\n<pre><code>var addPeople = function(observable) {\n    can.batch.start();\n    observable.attr('a', 'Alice');\n    observable.attr('b', 'Bob');\n    observable.attr('e', 'Eve');\n    can.batch.stop();\n};\n\n// In a completely different place:\nvar list = new can.Map();\nlist.bind('change', function() {\n    console.log('The list changed.');\n});\n\ncan.batch.start();\naddPeople(list);\nconsole.log('Still in the batch.');\n\n// Here, the console has:\n// Still in the batch.\n\ncan.batch.stop();\n\n// Here, the console has:\n// Still in the batch.\n// The list changed.\n// The list changed.\n// The list changed.\n</code></pre>\n\n</section>\n\n    \t\t\n    \t\n\n    </article>\n  </div>\n</div>\n","type":"function","name":"can.batch.start","parent":"can.batch","src":{"line":15,"codeLine":113,"path":"node_modules/can-event/batch/batch.js"},"description":"Begin an event batch. \n","title":"","signatures":[{"code":"can.batch.start([batchStopHandler])","description":"\n","params":[{"types":[{"type":"function","returns":{"types":[{"type":"undefined"}]},"params":[]}],"optional":true,"name":"batchStopHandler","description":"a callback that gets called after all batched events have been called\n"}]}],"_curParam":{"types":[{"type":"function","returns":{"types":[{"type":"undefined"}]},"params":[]}],"optional":true,"name":"batchStopHandler","description":"a callback that gets called after all batched events have been called\n"},"comment":" "};
+	</script>
+
+	
+		<script>
+		  steal = {
+		    instantiated: {
+		      "bundles/bit-docs-site/static.css!$css" : null
+		    }
+		  }
+		</script>
+		<script type='text/javascript'
+				data-main="bit-docs-site/static"
+				src="./static/node_modules/steal/steal.production.js"></script>
+	
+</body>
+
+</html>

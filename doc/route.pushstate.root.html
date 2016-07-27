@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!--####################################################################
+	THIS IS A GENERATED FILE -- ANY CHANGES MADE WILL BE OVERWRITTEN
+
+	INSTEAD CHANGE:
+	source: [object Object]
+	@property route.pushstate.root
+######################################################################## -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<link rel="stylesheet" type="text/css" href="./static/bundles/bit-docs-site/static.css">
+	
+</head>
+
+<body>
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger">Menu</label>
+  <header><nav class="navbar">
+	<a class="brand" href="../index.html">CanJS</a>
+
+	<ul class="bitovi-menu">
+		<li class="dropdown">
+			<a href="http://bitovi.com" class="bitovi icon-bits">Bitovi</a>
+			<ul class="dropdown-menu">
+				<li><a href="http://bitovi.com">Bitovi.com</a></li>
+				<li><a href="http://bitovi.com/blog/">Blog</a></li>
+				<li><a href="http://bitovi.com/consulting/">Consulting</a></li>
+				<li><a href="http://bitovi.com/training/">Training</a></li>
+				<li><a href="http://bitovi.com/open-source/">Open Source</a></li>
+			</ul>
+		</li>
+	</ul>
+
+	<ul class="navbar-items">
+		<li class="dropdown">
+				<a href="http://github.com/canjs/canjs">Github</a>
+				<ul class="dropdown-menu">
+      		<li><a href="http://github.com/canjs/can-connect">can-connect</a></li>
+					<li><a href=".">can-set</a></li>
+					<li><a href=".">can-compute</a></li>
+					<li><a href=".">can-component</a></li>
+				</ul>
+		</li>
+		<li>
+			<a href="https://gitter.im/canjs/canjs">Chat</a>
+		</li>
+		<li>
+			<a href="http://forums.donejs.com/c/canjs">Forum</a>
+		</li>
+	</ul>
+
+</nav>
+</header>
+  	<div class="main-container">
+  
+  	<nav class="sidebar">
+    
+        
+
+    
+</nav>
+  
+
+  <div class="content-container">
+    <article>
+    	
+    		<section class="title">
+	<h1>route.pushstate.root</h1>
+</section>
+
+    	
+
+        
+
+    	
+    		
+    			<section class="description">
+    <p>Configure the base url that will not be modified.</p>
+
+</section>
+
+    		
+    	
+
+    
+    
+    
+    <div class="signature">
+  <h2 class="signature-title"><code>String</code></h2>
+  <p>Represents the base url that pushstate will prepend to all
+routes.  <code>root</code> defaults to: <code>&quot;/&quot;</code>.</p>
+
+  
+  
+  
+  
+  
+  
+</div>
+    
+    
+    
+
+
+    	
+    		
+    			<section class="body">
+    <h2>Use</h2>
+<p>By default, a route like:</p>
+<pre><code>route(&quot;:type/:id&quot;)
+</code></pre>
+<p>Matches urls like:</p>
+<pre><code>http://domain.com/contact/5
+</code></pre>
+<p>But sometimes, you only want to match pages within a certain directory.  For
+example, an application that is a filemanager.  You might want to
+specify root and routes like:</p>
+<pre><code>route.pushstate.root = &quot;/filemanager/&quot;
+route(&quot;file-:fileId&quot;);
+route(&quot;folder-:fileId&quot;)
+</code></pre>
+<p>Which matches urls like:</p>
+<pre><code>http://domain.com/filemanager/file-34234
+</code></pre>
+
+</section>
+
+    		
+    	
+
+    </article>
+  </div>
+</div>
+
+  <footer><p>CanJS is part of <a href="http://donejs.com">DoneJS</a>. Created and maintained by the open source team at <a href="http://bitovi.com">Bitovi</a>. <strong>Currently v3.0.0.</strong></p></footer>
+	<script type="text/javascript">
+		var docObject = {"content":"<div class=\"main-container\">\n  \n  \t<nav class=\"sidebar\">\n    \n        \n\n    \n</nav>\n  \n\n  <div class=\"content-container\">\n    <article>\n    \t\n    \t\t<section class=\"title\">\n\t<h1>route.pushstate.root</h1>\n</section>\n\n    \t\n\n        \n\n    \t\n    \t\t\n    \t\t\t<section class=\"description\">\n    <p>Configure the base url that will not be modified.</p>\n\n</section>\n\n    \t\t\n    \t\n\n    \n    \n    \n    <div class=\"signature\">\n  <h2 class=\"signature-title\"><code>String</code></h2>\n  <p>Represents the base url that pushstate will prepend to all\nroutes.  <code>root</code> defaults to: <code>&quot;/&quot;</code>.</p>\n\n  \n  \n  \n  \n  \n  \n</div>\n    \n    \n    \n\n\n    \t\n    \t\t\n    \t\t\t<section class=\"body\">\n    <h2>Use</h2>\n<p>By default, a route like:</p>\n<pre><code>route(&quot;:type/:id&quot;)\n</code></pre>\n<p>Matches urls like:</p>\n<pre><code>http://domain.com/contact/5\n</code></pre>\n<p>But sometimes, you only want to match pages within a certain directory.  For\nexample, an application that is a filemanager.  You might want to\nspecify root and routes like:</p>\n<pre><code>route.pushstate.root = &quot;/filemanager/&quot;\nroute(&quot;file-:fileId&quot;);\nroute(&quot;folder-:fileId&quot;)\n</code></pre>\n<p>Which matches urls like:</p>\n<pre><code>http://domain.com/filemanager/file-34234\n</code></pre>\n\n</section>\n\n    \t\t\n    \t\n\n    </article>\n  </div>\n</div>\n","src":{"line":30,"codeLine":65,"path":"node_modules/can-route-pushstate/can-route-pushstate.js"},"type":"property","description":"Configure the base url that will not be modified. \n","types":[{"type":"String","description":"Represents the base url that pushstate will prepend to all\nroutes.  `root` defaults to: `\"/\"`.\n"}],"title":"","name":"route.pushstate.root","parent":"route.pushstate","comment":" "};
+	</script>
+
+	
+		<script>
+		  steal = {
+		    instantiated: {
+		      "bundles/bit-docs-site/static.css!$css" : null
+		    }
+		  }
+		</script>
+		<script type='text/javascript'
+				data-main="bit-docs-site/static"
+				src="./static/node_modules/steal/steal.production.js"></script>
+	
+</body>
+
+</html>

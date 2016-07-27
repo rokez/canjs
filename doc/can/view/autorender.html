@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<!--####################################################################
+	THIS IS A GENERATED FILE -- ANY CHANGES MADE WILL BE OVERWRITTEN
+
+	INSTEAD CHANGE:
+	source: [object Object]
+	@module can/view/autorender
+######################################################################## -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<link rel="stylesheet" type="text/css" href="../../static/bundles/bit-docs-site/static.css">
+	
+</head>
+
+<body>
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger">Menu</label>
+  <header><nav class="navbar">
+	<a class="brand" href="../../../index.html">CanJS</a>
+
+	<ul class="bitovi-menu">
+		<li class="dropdown">
+			<a href="http://bitovi.com" class="bitovi icon-bits">Bitovi</a>
+			<ul class="dropdown-menu">
+				<li><a href="http://bitovi.com">Bitovi.com</a></li>
+				<li><a href="http://bitovi.com/blog/">Blog</a></li>
+				<li><a href="http://bitovi.com/consulting/">Consulting</a></li>
+				<li><a href="http://bitovi.com/training/">Training</a></li>
+				<li><a href="http://bitovi.com/open-source/">Open Source</a></li>
+			</ul>
+		</li>
+	</ul>
+
+	<ul class="navbar-items">
+		<li class="dropdown">
+				<a href="http://github.com/canjs/canjs">Github</a>
+				<ul class="dropdown-menu">
+      		<li><a href="http://github.com/canjs/can-connect">can-connect</a></li>
+					<li><a href=".">can-set</a></li>
+					<li><a href=".">can-compute</a></li>
+					<li><a href=".">can-component</a></li>
+				</ul>
+		</li>
+		<li>
+			<a href="https://gitter.im/canjs/canjs">Chat</a>
+		</li>
+		<li>
+			<a href="http://forums.donejs.com/c/canjs">Forum</a>
+		</li>
+	</ul>
+
+</nav>
+</header>
+  	<div class="main-container">
+  
+  	<nav class="sidebar">
+    
+        
+
+    
+</nav>
+  
+
+  <div class="content-container">
+    <article>
+    	
+    		<section class="title">
+	<h1>can.autorender</h1>
+</section>
+
+    	
+
+        
+
+    	
+    		
+    			<section class="description">
+    <p>A module that automatically renders script and other elements with
+the [can/view/autorender.can-autorender] attribute. This function is useful to know when
+the templates have finished rendering.</p>
+
+</section>
+
+    		
+    	
+
+    
+    
+    
+    <div class="signature">
+  <h2 class="signature-title"><code>can.autorender(succcess, error)</code></h2>
+  <pre><code>Registers functions to callback when all templates successfully render or an error in rendering happens.
+</code></pre>
+
+  
+  
+  <div class="parameters">
+    <h3 class="parameters-title">Parameters</h3>
+      <ol>
+        
+          <li><b>success</b> <code>{function}</code>: <p>A function to callback when all autorendered templates have been rendered
+successfully.</p>
+</li>
+        
+          <li><b>error</b> <code>{function}</code>: <p>A function to callback if a template was not rendered successfully.</p>
+</li>
+        
+      </ol>
+  </div>
+  
+  
+  
+  
+  
+</div>
+    
+    
+    
+
+
+    	
+    		
+    			<section class="body">
+    <h2>Use</h2>
+<p>As long is this module is part of your CanJS build or imported with RequireJS, StealJS, or SystemJS,
+[can/view/autorender.can-autorender] will automatically look for <code>can-autorender</code> tags and render them.  Once
+all templates have finished rendering, it will call any callbacks passed to <code>can.autorender()</code>.</p>
+<p>For example, you might have a page like:</p>
+<pre><code>&lt;body&gt;
+    &lt;script type='text/stache' can-autorender id='main'
+        message=&quot;Hello World&quot;&gt;
+        &lt;my-component&gt;
+            {{message}}
+        &lt;/my-component&gt;
+    &lt;/script&gt;
+
+    &lt;script src='jquery.js'&gt;&lt;/script&gt;
+    &lt;!-- A CanJS build that includes this plugin --&gt;
+    &lt;script src='can.custom.js'&gt;&lt;/script&gt;
+    &lt;!-- All your app's code and components --&gt;
+    &lt;script src='app.js'&gt;&lt;/script&gt;
+    &lt;script&gt;
+        // Wait until everything has rendered.
+        can.autorender(function(){
+
+            // Update the viewModel the template was rendred with:
+            $(&quot;#main&quot;).viewModel().attr(&quot;message&quot;,&quot;Rendered!&quot;);
+
+        })
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<h2>Rendered placement</h2>
+<p>If the template source is a <code>&lt;script&gt;</code> tag within the <code>&lt;body&gt;</code>, the rendered template is placed
+immediately following the template.</p>
+<p>For example:</p>
+<pre><code>&lt;body&gt;
+    &lt;script type='text/stache' can-autorender message=&quot;Hi&quot;&gt;
+        {{message}}!
+    &lt;/script&gt;
+    &lt;div&gt;...&lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<p>Becomes:</p>
+<pre><code>&lt;body&gt;
+    &lt;script type='text/stache' can-autorender message=&quot;Hi&quot;&gt;
+        {{message}}!
+    &lt;/script&gt;
+    Hi!
+    &lt;div&gt;...&lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<p>If the <code>&lt;script&gt;</code> tag is outside the body, for example in the <code>&lt;head&gt;</code>
+tag, the rendered result will be placed just before the closing <code>&lt;/body&gt;</code> tag.</p>
+<p>For example:</p>
+<pre><code>&lt;head&gt;
+    &lt;script type='text/stache' can-autorender message=&quot;Hi&quot;&gt;
+        {{message}}!
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;...&lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<p>Becomes:</p>
+<pre><code>&lt;head&gt;
+    &lt;script type='text/stache' can-autorender message=&quot;Hi&quot;&gt;
+        {{message}}!
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;...&lt;/div&gt;
+    Hi!
+&lt;/body&gt;
+</code></pre>
+<p>If the template source is any other element, the element's contents will be replaced with the rendered result.  For example:</p>
+<pre><code>&lt;body&gt;
+    &lt;div type='text/stache' can-autorender message=&quot;Hi&quot;&gt;
+        {{message}}!
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<p>Becomes:</p>
+<pre><code>&lt;body&gt;
+    &lt;div type='text/stache' can-autorender message=&quot;Hi&quot;&gt;
+        Hi!
+    &lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+<h2>Scope</h2>
+<p>The template is rendered with a [can.Map] made from the attributes of the
+template source element.  That <code>map</code> is available on the
+template source element via [can.viewModel].  You can
+change the map at any time:</p>
+<pre><code>&lt;body&gt;
+    &lt;script type='text/stache' can-autorender id='main'&gt;
+        {{message}}!
+    &lt;/script&gt;
+    &lt;script&gt;
+        var viewModel = can.viewModel(document.getElementById(&quot;main&quot;));
+        viewModel.attr(&quot;message&quot;,&quot;Hello There!&quot;);
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<p>You can change attributes on the element and it will update the
+viewModel too:</p>
+<pre><code>&lt;body&gt;
+    &lt;script type='text/stache' can-autorender id='main'&gt;
+        {{message}}!
+    &lt;/script&gt;
+    &lt;script&gt;
+        var main = document.getElementById(&quot;main&quot;);
+        main.setAttribute(&quot;message&quot;,&quot;Hello There!&quot;);
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<h2>StealJS Use</h2>
+<p>For demo pages that require very little setup:</p>
+<pre><code>&lt;body&gt;
+    &lt;script type='text/stache'&gt;
+        &lt;can-import from=&quot;components/my-component&quot;/&gt;
+        &lt;my-component&gt;
+            {{message}}
+        &lt;/my-component&gt;
+    &lt;/script&gt;
+    &lt;script src='../node_modules/steal/steal.js'
+                    main='can/view/autorender/'&gt;
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<p>For demo pages that require a little custom setup:</p>
+<pre><code>&lt;body&gt;
+    &lt;script type='text/stache' can-autorender&gt;
+        &lt;can-import from=&quot;components/my-component&quot;/&gt;
+        &lt;my-component&gt;
+            {{message}}
+        &lt;/my-component&gt;
+    &lt;/script&gt;
+    &lt;script src='../node_modules/steal/steal.js'
+                    main='@empty'&gt;
+        var can = require('can');
+        var $ = reqire('jquery');
+        require('can/view/autorender/autorender');
+
+        $(&quot;my-component&quot;).viewModel().attr(&quot;message&quot;, &quot;Hi&quot;);
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<h2>Errors</h2>
+<p>Error callbacks will be called if a template has a parsing error or
+a [can/view/stache/system.import] fails.</p>
+
+</section>
+
+    		
+    	
+
+    </article>
+  </div>
+</div>
+
+  <footer><p>CanJS is part of <a href="http://donejs.com">DoneJS</a>. Created and maintained by the open source team at <a href="http://bitovi.com">Bitovi</a>. <strong>Currently v3.0.0.</strong></p></footer>
+	<script type="text/javascript">
+		var docObject = {"content":"<div class=\"main-container\">\n  \n  \t<nav class=\"sidebar\">\n    \n        \n\n    \n</nav>\n  \n\n  <div class=\"content-container\">\n    <article>\n    \t\n    \t\t<section class=\"title\">\n\t<h1>can.autorender</h1>\n</section>\n\n    \t\n\n        \n\n    \t\n    \t\t\n    \t\t\t<section class=\"description\">\n    <p>A module that automatically renders script and other elements with\nthe [can/view/autorender.can-autorender] attribute. This function is useful to know when\nthe templates have finished rendering.</p>\n\n</section>\n\n    \t\t\n    \t\n\n    \n    \n    \n    <div class=\"signature\">\n  <h2 class=\"signature-title\"><code>can.autorender(succcess, error)</code></h2>\n  <pre><code>Registers functions to callback when all templates successfully render or an error in rendering happens.\n</code></pre>\n\n  \n  \n  <div class=\"parameters\">\n    <h3 class=\"parameters-title\">Parameters</h3>\n      <ol>\n        \n          <li><b>success</b> <code>{function}</code>: <p>A function to callback when all autorendered templates have been rendered\nsuccessfully.</p>\n</li>\n        \n          <li><b>error</b> <code>{function}</code>: <p>A function to callback if a template was not rendered successfully.</p>\n</li>\n        \n      </ol>\n  </div>\n  \n  \n  \n  \n  \n</div>\n    \n    \n    \n\n\n    \t\n    \t\t\n    \t\t\t<section class=\"body\">\n    <h2>Use</h2>\n<p>As long is this module is part of your CanJS build or imported with RequireJS, StealJS, or SystemJS,\n[can/view/autorender.can-autorender] will automatically look for <code>can-autorender</code> tags and render them.  Once\nall templates have finished rendering, it will call any callbacks passed to <code>can.autorender()</code>.</p>\n<p>For example, you might have a page like:</p>\n<pre><code>&lt;body&gt;\n    &lt;script type='text/stache' can-autorender id='main'\n        message=&quot;Hello World&quot;&gt;\n        &lt;my-component&gt;\n            {{message}}\n        &lt;/my-component&gt;\n    &lt;/script&gt;\n\n    &lt;script src='jquery.js'&gt;&lt;/script&gt;\n    &lt;!-- A CanJS build that includes this plugin --&gt;\n    &lt;script src='can.custom.js'&gt;&lt;/script&gt;\n    &lt;!-- All your app's code and components --&gt;\n    &lt;script src='app.js'&gt;&lt;/script&gt;\n    &lt;script&gt;\n        // Wait until everything has rendered.\n        can.autorender(function(){\n\n            // Update the viewModel the template was rendred with:\n            $(&quot;#main&quot;).viewModel().attr(&quot;message&quot;,&quot;Rendered!&quot;);\n\n        })\n    &lt;/script&gt;\n&lt;/body&gt;\n</code></pre>\n<h2>Rendered placement</h2>\n<p>If the template source is a <code>&lt;script&gt;</code> tag within the <code>&lt;body&gt;</code>, the rendered template is placed\nimmediately following the template.</p>\n<p>For example:</p>\n<pre><code>&lt;body&gt;\n    &lt;script type='text/stache' can-autorender message=&quot;Hi&quot;&gt;\n        {{message}}!\n    &lt;/script&gt;\n    &lt;div&gt;...&lt;/div&gt;\n&lt;/body&gt;\n</code></pre>\n<p>Becomes:</p>\n<pre><code>&lt;body&gt;\n    &lt;script type='text/stache' can-autorender message=&quot;Hi&quot;&gt;\n        {{message}}!\n    &lt;/script&gt;\n    Hi!\n    &lt;div&gt;...&lt;/div&gt;\n&lt;/body&gt;\n</code></pre>\n<p>If the <code>&lt;script&gt;</code> tag is outside the body, for example in the <code>&lt;head&gt;</code>\ntag, the rendered result will be placed just before the closing <code>&lt;/body&gt;</code> tag.</p>\n<p>For example:</p>\n<pre><code>&lt;head&gt;\n    &lt;script type='text/stache' can-autorender message=&quot;Hi&quot;&gt;\n        {{message}}!\n    &lt;/script&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;div&gt;...&lt;/div&gt;\n&lt;/body&gt;\n</code></pre>\n<p>Becomes:</p>\n<pre><code>&lt;head&gt;\n    &lt;script type='text/stache' can-autorender message=&quot;Hi&quot;&gt;\n        {{message}}!\n    &lt;/script&gt;\n&lt;/head&gt;\n&lt;body&gt;\n    &lt;div&gt;...&lt;/div&gt;\n    Hi!\n&lt;/body&gt;\n</code></pre>\n<p>If the template source is any other element, the element's contents will be replaced with the rendered result.  For example:</p>\n<pre><code>&lt;body&gt;\n    &lt;div type='text/stache' can-autorender message=&quot;Hi&quot;&gt;\n        {{message}}!\n    &lt;/div&gt;\n&lt;/body&gt;\n</code></pre>\n<p>Becomes:</p>\n<pre><code>&lt;body&gt;\n    &lt;div type='text/stache' can-autorender message=&quot;Hi&quot;&gt;\n        Hi!\n    &lt;/div&gt;\n&lt;/body&gt;\n</code></pre>\n<h2>Scope</h2>\n<p>The template is rendered with a [can.Map] made from the attributes of the\ntemplate source element.  That <code>map</code> is available on the\ntemplate source element via [can.viewModel].  You can\nchange the map at any time:</p>\n<pre><code>&lt;body&gt;\n    &lt;script type='text/stache' can-autorender id='main'&gt;\n        {{message}}!\n    &lt;/script&gt;\n    &lt;script&gt;\n        var viewModel = can.viewModel(document.getElementById(&quot;main&quot;));\n        viewModel.attr(&quot;message&quot;,&quot;Hello There!&quot;);\n    &lt;/script&gt;\n&lt;/body&gt;\n</code></pre>\n<p>You can change attributes on the element and it will update the\nviewModel too:</p>\n<pre><code>&lt;body&gt;\n    &lt;script type='text/stache' can-autorender id='main'&gt;\n        {{message}}!\n    &lt;/script&gt;\n    &lt;script&gt;\n        var main = document.getElementById(&quot;main&quot;);\n        main.setAttribute(&quot;message&quot;,&quot;Hello There!&quot;);\n    &lt;/script&gt;\n&lt;/body&gt;\n</code></pre>\n<h2>StealJS Use</h2>\n<p>For demo pages that require very little setup:</p>\n<pre><code>&lt;body&gt;\n    &lt;script type='text/stache'&gt;\n        &lt;can-import from=&quot;components/my-component&quot;/&gt;\n        &lt;my-component&gt;\n            {{message}}\n        &lt;/my-component&gt;\n    &lt;/script&gt;\n    &lt;script src='../node_modules/steal/steal.js'\n                    main='can/view/autorender/'&gt;\n    &lt;/script&gt;\n&lt;/body&gt;\n</code></pre>\n<p>For demo pages that require a little custom setup:</p>\n<pre><code>&lt;body&gt;\n    &lt;script type='text/stache' can-autorender&gt;\n        &lt;can-import from=&quot;components/my-component&quot;/&gt;\n        &lt;my-component&gt;\n            {{message}}\n        &lt;/my-component&gt;\n    &lt;/script&gt;\n    &lt;script src='../node_modules/steal/steal.js'\n                    main='@empty'&gt;\n        var can = require('can');\n        var $ = reqire('jquery');\n        require('can/view/autorender/autorender');\n\n        $(&quot;my-component&quot;).viewModel().attr(&quot;message&quot;, &quot;Hi&quot;);\n    &lt;/script&gt;\n&lt;/body&gt;\n</code></pre>\n<h2>Errors</h2>\n<p>Error callbacks will be called if a template has a parsing error or\na [can/view/stache/system.import] fails.</p>\n\n</section>\n\n    \t\t\n    \t\n\n    </article>\n  </div>\n</div>\n","src":{"path":"node_modules/can-view-autorender/autorender.md"},"description":"\nA module that automatically renders script and other elements with\nthe [can/view/autorender.can-autorender] attribute. This function is useful to know when\nthe templates have finished rendering.\n","type":"module","title":"can.autorender","types":[{"type":"function","returns":{"types":[{"type":"undefined"}]},"params":[]}],"name":"can/view/autorender","parent":"can.view.plugins","signatures":[{"code":"can.autorender(succcess, error)","description":"\n\n\tRegisters functions to callback when all templates successfully render or an error in rendering happens.\n","params":[{"types":[{"type":"function","returns":{"types":[{"type":"undefined"}]},"params":[]}],"name":"success","description":"A function to callback when all autorendered templates have been rendered\nsuccessfully.\n"},{"types":[{"type":"function","returns":{"types":[{"type":"undefined"}]},"params":[]}],"optional":true,"name":"error","description":"A function to callback if a template was not rendered successfully.\n"}]}],"_curParam":{"types":[{"type":"function","returns":{"types":[{"type":"undefined"}]},"params":[]}],"optional":true,"name":"error","description":"A function to callback if a template was not rendered successfully.\n"},"comment":" "};
+	</script>
+
+	
+		<script>
+		  steal = {
+		    instantiated: {
+		      "bundles/bit-docs-site/static.css!$css" : null
+		    }
+		  }
+		</script>
+		<script type='text/javascript'
+				data-main="bit-docs-site/static"
+				src="../../static/node_modules/steal/steal.production.js"></script>
+	
+</body>
+
+</html>

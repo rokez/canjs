@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--####################################################################
+	THIS IS A GENERATED FILE -- ANY CHANGES MADE WILL BE OVERWRITTEN
+
+	INSTEAD CHANGE:
+	source: [object Object]
+	@function can-set.Algebra.prototype.difference
+######################################################################## -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<link rel="stylesheet" type="text/css" href="./static/bundles/bit-docs-site/static.css">
+	
+</head>
+
+<body>
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger">Menu</label>
+  <header><nav class="navbar">
+	<a class="brand" href="../index.html">CanJS</a>
+
+	<ul class="bitovi-menu">
+		<li class="dropdown">
+			<a href="http://bitovi.com" class="bitovi icon-bits">Bitovi</a>
+			<ul class="dropdown-menu">
+				<li><a href="http://bitovi.com">Bitovi.com</a></li>
+				<li><a href="http://bitovi.com/blog/">Blog</a></li>
+				<li><a href="http://bitovi.com/consulting/">Consulting</a></li>
+				<li><a href="http://bitovi.com/training/">Training</a></li>
+				<li><a href="http://bitovi.com/open-source/">Open Source</a></li>
+			</ul>
+		</li>
+	</ul>
+
+	<ul class="navbar-items">
+		<li class="dropdown">
+				<a href="http://github.com/canjs/canjs">Github</a>
+				<ul class="dropdown-menu">
+      		<li><a href="http://github.com/canjs/can-connect">can-connect</a></li>
+					<li><a href=".">can-set</a></li>
+					<li><a href=".">can-compute</a></li>
+					<li><a href=".">can-component</a></li>
+				</ul>
+		</li>
+		<li>
+			<a href="https://gitter.im/canjs/canjs">Chat</a>
+		</li>
+		<li>
+			<a href="http://forums.donejs.com/c/canjs">Forum</a>
+		</li>
+	</ul>
+
+</nav>
+</header>
+  	<div class="main-container">
+  
+  	<nav class="sidebar">
+    
+        
+
+    
+</nav>
+  
+
+  <div class="content-container">
+    <article>
+    	
+    		<section class="title">
+	<h1>can-set.Algebra.prototype.difference</h1>
+</section>
+
+    	
+
+        
+
+    	
+    		
+    			<section class="description">
+    
+</section>
+
+    		
+    	
+
+    
+    
+    
+    <div class="signature">
+  <h2 class="signature-title"><code>algebra.difference(a, b)</code></h2>
+  <p>Returns a set that represents the difference of sets <em>A</em> and <em>B</em> (<em>A</em> \ <em>B</em>), or
+returns if a difference exists.</p>
+<pre><code class="language-js">algebra1 = new set.Algebra(set.comparators.boolean(&quot;completed&quot;));
+algebra2 = new set.Algebra();
+
+// A has all of B
+algebra1.difference( {} , {completed: true} ) //-&gt; {completed: false}
+
+// A has all of B, but we can't figure out how to create a set object
+algebra2.difference( {} , {completed: true} ) //-&gt; true
+
+// A is totally inside B
+algebra2.difference( {completed: true}, {} )  //-&gt; false
+</code></pre>
+
+  
+  
+  <div class="parameters">
+    <h3 class="parameters-title">Parameters</h3>
+      <ol>
+        
+          <li><b>a</b> <code>{can-set.set}</code>: <p>A set.</p>
+</li>
+        
+          <li><b>b</b> <code>{can-set.set}</code>: <p>A set.</p>
+</li>
+        
+      </ol>
+  </div>
+  
+  
+  
+  <ul>
+      <li><b>returns</b>  <code>{can-set.set|Boolean}</code>: <p>If an object is returned, it is difference of sets <em>A</em> and <em>B</em> (<em>A</em> \ <em>B</em>).</p>
+<p>If <code>true</code> is returned, that means that <em>B</em> is a subset of <em>A</em>, but no set object
+can be returned that represents that set.</p>
+<p>If <code>false</code> is returned, that means there is no difference or the sets are not comparable.</p>
+ </li>
+  </ul>
+  
+  
+  
+</div>
+    
+    
+    
+
+
+    	
+    		
+    	
+
+    </article>
+  </div>
+</div>
+
+  <footer><p>CanJS is part of <a href="http://donejs.com">DoneJS</a>. Created and maintained by the open source team at <a href="http://bitovi.com">Bitovi</a>. <strong>Currently v3.0.0.</strong></p></footer>
+	<script type="text/javascript">
+		var docObject = {"content":"<div class=\"main-container\">\n  \n  \t<nav class=\"sidebar\">\n    \n        \n\n    \n</nav>\n  \n\n  <div class=\"content-container\">\n    <article>\n    \t\n    \t\t<section class=\"title\">\n\t<h1>can-set.Algebra.prototype.difference</h1>\n</section>\n\n    \t\n\n        \n\n    \t\n    \t\t\n    \t\t\t<section class=\"description\">\n    \n</section>\n\n    \t\t\n    \t\n\n    \n    \n    \n    <div class=\"signature\">\n  <h2 class=\"signature-title\"><code>algebra.difference(a, b)</code></h2>\n  <p>Returns a set that represents the difference of sets <em>A</em> and <em>B</em> (<em>A</em> \\ <em>B</em>), or\nreturns if a difference exists.</p>\n<pre><code class=\"language-js\">algebra1 = new set.Algebra(set.comparators.boolean(&quot;completed&quot;));\nalgebra2 = new set.Algebra();\n\n// A has all of B\nalgebra1.difference( {} , {completed: true} ) //-&gt; {completed: false}\n\n// A has all of B, but we can't figure out how to create a set object\nalgebra2.difference( {} , {completed: true} ) //-&gt; true\n\n// A is totally inside B\nalgebra2.difference( {completed: true}, {} )  //-&gt; false\n</code></pre>\n\n  \n  \n  <div class=\"parameters\">\n    <h3 class=\"parameters-title\">Parameters</h3>\n      <ol>\n        \n          <li><b>a</b> <code>{can-set.set}</code>: <p>A set.</p>\n</li>\n        \n          <li><b>b</b> <code>{can-set.set}</code>: <p>A set.</p>\n</li>\n        \n      </ol>\n  </div>\n  \n  \n  \n  <ul>\n      <li><b>returns</b>  <code>{can-set.set|Boolean}</code>: <p>If an object is returned, it is difference of sets <em>A</em> and <em>B</em> (<em>A</em> \\ <em>B</em>).</p>\n<p>If <code>true</code> is returned, that means that <em>B</em> is a subset of <em>A</em>, but no set object\ncan be returned that represents that set.</p>\n<p>If <code>false</code> is returned, that means there is no difference or the sets are not comparable.</p>\n </li>\n  </ul>\n  \n  \n  \n</div>\n    \n    \n    \n\n\n    \t\n    \t\t\n    \t\n\n    </article>\n  </div>\n</div>\n","type":"function","name":"can-set.Algebra.prototype.difference","parent":"can-set.Algebra.prototype","src":{"line":328,"codeLine":360,"path":"node_modules/can-set/src/set-core.js"},"description":"\n","title":"","signatures":[{"code":"algebra.difference(a, b)","description":"\n\nReturns a set that represents the difference of sets _A_ and _B_ (_A_ \\ _B_), or\nreturns if a difference exists.\n\n```js\nalgebra1 = new set.Algebra(set.comparators.boolean(\"completed\"));\nalgebra2 = new set.Algebra();\n\n// A has all of B\nalgebra1.difference( {} , {completed: true} ) //-> {completed: false}\n\n// A has all of B, but we can't figure out how to create a set object\nalgebra2.difference( {} , {completed: true} ) //-> true\n\n// A is totally inside B\nalgebra2.difference( {completed: true}, {} )  //-> false\n```\n","params":[{"types":[{"type":"can-set.set"}],"name":"a","description":"A set."},{"types":[{"type":"can-set.set"}],"name":"b","description":"A set."}],"returns":{"types":[{"type":"can-set.set"},{"type":"Boolean"}],"description":"If an object is returned, it is difference of sets _A_ and _B_ (_A_ \\ _B_).\n\nIf `true` is returned, that means that _B_ is a subset of _A_, but no set object\ncan be returned that represents that set.\n\nIf `false` is returned, that means there is no difference or the sets are not comparable.\n "}}],"_curParam":{"types":[{"type":"can-set.set"}],"name":"b","description":"A set."},"_curReturn":{"types":[{"type":"can-set.set"},{"type":"Boolean"}],"description":"If an object is returned, it is difference of sets _A_ and _B_ (_A_ \\ _B_).\n\nIf `true` is returned, that means that _B_ is a subset of _A_, but no set object\ncan be returned that represents that set.\n\nIf `false` is returned, that means there is no difference or the sets are not comparable.\n "}};
+	</script>
+
+	
+		<script>
+		  steal = {
+		    instantiated: {
+		      "bundles/bit-docs-site/static.css!$css" : null
+		    }
+		  }
+		</script>
+		<script type='text/javascript'
+				data-main="bit-docs-site/static"
+				src="./static/node_modules/steal/steal.production.js"></script>
+	
+</body>
+
+</html>

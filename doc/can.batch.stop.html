@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--####################################################################
+	THIS IS A GENERATED FILE -- ANY CHANGES MADE WILL BE OVERWRITTEN
+
+	INSTEAD CHANGE:
+	source: [object Object]
+	@function can.batch.stop
+######################################################################## -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<link rel="stylesheet" type="text/css" href="./static/bundles/bit-docs-site/static.css">
+	
+</head>
+
+<body>
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger">Menu</label>
+  <header><nav class="navbar">
+	<a class="brand" href="../index.html">CanJS</a>
+
+	<ul class="bitovi-menu">
+		<li class="dropdown">
+			<a href="http://bitovi.com" class="bitovi icon-bits">Bitovi</a>
+			<ul class="dropdown-menu">
+				<li><a href="http://bitovi.com">Bitovi.com</a></li>
+				<li><a href="http://bitovi.com/blog/">Blog</a></li>
+				<li><a href="http://bitovi.com/consulting/">Consulting</a></li>
+				<li><a href="http://bitovi.com/training/">Training</a></li>
+				<li><a href="http://bitovi.com/open-source/">Open Source</a></li>
+			</ul>
+		</li>
+	</ul>
+
+	<ul class="navbar-items">
+		<li class="dropdown">
+				<a href="http://github.com/canjs/canjs">Github</a>
+				<ul class="dropdown-menu">
+      		<li><a href="http://github.com/canjs/can-connect">can-connect</a></li>
+					<li><a href=".">can-set</a></li>
+					<li><a href=".">can-compute</a></li>
+					<li><a href=".">can-component</a></li>
+				</ul>
+		</li>
+		<li>
+			<a href="https://gitter.im/canjs/canjs">Chat</a>
+		</li>
+		<li>
+			<a href="http://forums.donejs.com/c/canjs">Forum</a>
+		</li>
+	</ul>
+
+</nav>
+</header>
+  	<div class="main-container">
+  
+  	<nav class="sidebar">
+    
+        
+
+    
+</nav>
+  
+
+  <div class="content-container">
+    <article>
+    	
+    		<section class="title">
+	<h1>can.batch.stop</h1>
+</section>
+
+    	
+
+        
+
+    	
+    		
+    			<section class="description">
+    <p>End an event batch.</p>
+
+</section>
+
+    		
+    	
+
+    
+    
+    
+    <div class="signature">
+  <h2 class="signature-title"><code>can.batch.stop([force[, callStart]])</code></h2>
+  
+  
+  
+  <div class="parameters">
+    <h3 class="parameters-title">Parameters</h3>
+      <ol>
+        
+          <li><b>force</b> <code>{bool}</code>: <p>whether to stop batching events immediately</p>
+</li>
+        
+          <li><b>callStart</b> <code>{bool}</code>: <p>whether to call <code>&lt;a href=&quot;can.batch.start.html&quot;&gt;can.batch.start&lt;/a&gt;</code> after firing batched events</p>
+</li>
+        
+      </ol>
+  </div>
+  
+  
+  
+  
+  
+</div>
+    
+    
+    
+
+
+    	
+    		
+    			<section class="body">
+    <p><code>can.batch.stop</code> matches an earlier <code><a href="can.batch.start.html">can.batch.start</a></code> call. If <code>can.batch.stop</code> has been
+called as many times as <code>can.batch.start</code> (or if <em>force</em> is true), all batched events will be
+fired and any callbacks passed to <code>can.batch.start</code> since the beginning of the batch will be
+called. If _force and <em>callStart</em> are both true, a new batch will be started when all
+the events and callbacks have been fired.</p>
+<p>See <code><a href="can.batch.start.html">can.batch.start</a></code> for examples of <code>can.batch.start</code> and <code>can.batch.stop</code> in normal use.</p>
+<p>In this example, the batch is forceably ended in the <code>addPeople</code> function.</p>
+<pre><code>var addPeople = function(observable) {
+    can.batch.start();
+    observable.attr('a', 'Alice');
+    observable.attr('b', 'Bob');
+    observable.attr('e', 'Eve');
+    can.batch.stop(true);
+};
+
+// In a completely different place:
+var list = new can.Map();
+list.bind('change', function() {
+    console.log('The list changed.');
+});
+
+can.batch.start();
+addPeople(list);
+console.log('Still in the batch.');
+
+// Here, the console has:
+// Still in the batch.
+
+can.batch.stop();
+
+// Here, the console has:
+// The list changed.
+// The list changed.
+// The list changed.
+// Still in the batch.
+</code></pre>
+
+</section>
+
+    		
+    	
+
+    </article>
+  </div>
+</div>
+
+  <footer><p>CanJS is part of <a href="http://donejs.com">DoneJS</a>. Created and maintained by the open source team at <a href="http://bitovi.com">Bitovi</a>. <strong>Currently v3.0.0.</strong></p></footer>
+	<script type="text/javascript">
+		var docObject = {"content":"<div class=\"main-container\">\n  \n  \t<nav class=\"sidebar\">\n    \n        \n\n    \n</nav>\n  \n\n  <div class=\"content-container\">\n    <article>\n    \t\n    \t\t<section class=\"title\">\n\t<h1>can.batch.stop</h1>\n</section>\n\n    \t\n\n        \n\n    \t\n    \t\t\n    \t\t\t<section class=\"description\">\n    <p>End an event batch.</p>\n\n</section>\n\n    \t\t\n    \t\n\n    \n    \n    \n    <div class=\"signature\">\n  <h2 class=\"signature-title\"><code>can.batch.stop([force[, callStart]])</code></h2>\n  \n  \n  \n  <div class=\"parameters\">\n    <h3 class=\"parameters-title\">Parameters</h3>\n      <ol>\n        \n          <li><b>force</b> <code>{bool}</code>: <p>whether to stop batching events immediately</p>\n</li>\n        \n          <li><b>callStart</b> <code>{bool}</code>: <p>whether to call <code>&lt;a href=&quot;can.batch.start.html&quot;&gt;can.batch.start&lt;/a&gt;</code> after firing batched events</p>\n</li>\n        \n      </ol>\n  </div>\n  \n  \n  \n  \n  \n</div>\n    \n    \n    \n\n\n    \t\n    \t\t\n    \t\t\t<section class=\"body\">\n    <p><code>can.batch.stop</code> matches an earlier <code><a href=\"can.batch.start.html\">can.batch.start</a></code> call. If <code>can.batch.stop</code> has been\ncalled as many times as <code>can.batch.start</code> (or if <em>force</em> is true), all batched events will be\nfired and any callbacks passed to <code>can.batch.start</code> since the beginning of the batch will be\ncalled. If _force and <em>callStart</em> are both true, a new batch will be started when all\nthe events and callbacks have been fired.</p>\n<p>See <code><a href=\"can.batch.start.html\">can.batch.start</a></code> for examples of <code>can.batch.start</code> and <code>can.batch.stop</code> in normal use.</p>\n<p>In this example, the batch is forceably ended in the <code>addPeople</code> function.</p>\n<pre><code>var addPeople = function(observable) {\n    can.batch.start();\n    observable.attr('a', 'Alice');\n    observable.attr('b', 'Bob');\n    observable.attr('e', 'Eve');\n    can.batch.stop(true);\n};\n\n// In a completely different place:\nvar list = new can.Map();\nlist.bind('change', function() {\n    console.log('The list changed.');\n});\n\ncan.batch.start();\naddPeople(list);\nconsole.log('Still in the batch.');\n\n// Here, the console has:\n// Still in the batch.\n\ncan.batch.stop();\n\n// Here, the console has:\n// The list changed.\n// The list changed.\n// The list changed.\n// Still in the batch.\n</code></pre>\n\n</section>\n\n    \t\t\n    \t\n\n    </article>\n  </div>\n</div>\n","type":"function","name":"can.batch.stop","parent":"can.batch","src":{"line":129,"codeLine":178,"path":"node_modules/can-event/batch/batch.js"},"description":"End an event batch. ","title":"","signatures":[{"code":"can.batch.stop([force[, callStart]])","description":"","params":[{"types":[{"type":"bool"}],"optional":true,"name":"force","defaultValue":"false","description":"whether to stop batching events immediately"},{"types":[{"type":"bool"}],"optional":true,"name":"callStart","defaultValue":"false","description":"whether to call `[can.batch.start can.batch.start]` after firing batched events\n"}]}],"_curParam":{"types":[{"type":"bool"}],"optional":true,"name":"callStart","defaultValue":"false","description":"whether to call `[can.batch.start can.batch.start]` after firing batched events\n"},"comment":" "};
+	</script>
+
+	
+		<script>
+		  steal = {
+		    instantiated: {
+		      "bundles/bit-docs-site/static.css!$css" : null
+		    }
+		  }
+		</script>
+		<script type='text/javascript'
+				data-main="bit-docs-site/static"
+				src="./static/node_modules/steal/steal.production.js"></script>
+	
+</body>
+
+</html>

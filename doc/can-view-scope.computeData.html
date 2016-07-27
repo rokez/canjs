@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--####################################################################
+	THIS IS A GENERATED FILE -- ANY CHANGES MADE WILL BE OVERWRITTEN
+
+	INSTEAD CHANGE:
+	source: [object Object]
+	@function can-view-scope.computeData
+######################################################################## -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<link rel="stylesheet" type="text/css" href="./static/bundles/bit-docs-site/static.css">
+	
+</head>
+
+<body>
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger">Menu</label>
+  <header><nav class="navbar">
+	<a class="brand" href="../index.html">CanJS</a>
+
+	<ul class="bitovi-menu">
+		<li class="dropdown">
+			<a href="http://bitovi.com" class="bitovi icon-bits">Bitovi</a>
+			<ul class="dropdown-menu">
+				<li><a href="http://bitovi.com">Bitovi.com</a></li>
+				<li><a href="http://bitovi.com/blog/">Blog</a></li>
+				<li><a href="http://bitovi.com/consulting/">Consulting</a></li>
+				<li><a href="http://bitovi.com/training/">Training</a></li>
+				<li><a href="http://bitovi.com/open-source/">Open Source</a></li>
+			</ul>
+		</li>
+	</ul>
+
+	<ul class="navbar-items">
+		<li class="dropdown">
+				<a href="http://github.com/canjs/canjs">Github</a>
+				<ul class="dropdown-menu">
+      		<li><a href="http://github.com/canjs/can-connect">can-connect</a></li>
+					<li><a href=".">can-set</a></li>
+					<li><a href=".">can-compute</a></li>
+					<li><a href=".">can-component</a></li>
+				</ul>
+		</li>
+		<li>
+			<a href="https://gitter.im/canjs/canjs">Chat</a>
+		</li>
+		<li>
+			<a href="http://forums.donejs.com/c/canjs">Forum</a>
+		</li>
+	</ul>
+
+</nav>
+</header>
+  	<div class="main-container">
+  
+  	<nav class="sidebar">
+    
+        
+
+    
+</nav>
+  
+
+  <div class="content-container">
+    <article>
+    	
+    		<section class="title">
+	<h1>computeData</h1>
+</section>
+
+    	
+
+        
+
+    	
+    		
+    			<section class="description">
+    
+</section>
+
+    		
+    	
+
+    
+    
+    
+    <div class="signature">
+  <h2 class="signature-title"><code>scope.computeData(key)</code></h2>
+  
+  
+  
+  <div class="parameters">
+    <h3 class="parameters-title">Parameters</h3>
+      <ol>
+        
+          <li><b>key</b> <code>{can-mustache.key}</code>: <p>A dot seperated path.  Use <code>&quot;.&quot;</code> if you have a
+property name that includes a dot.</p>
+</li>
+        
+          <li><b>options</b> <code>{can-view-scope.readOptions}</code>: <p>Options that configure how the <code>key</code> gets read.</p>
+</li>
+        
+      </ol>
+  </div>
+  
+  
+  
+  <ul>
+      <li><b>returns</b>  <code>{Object}</code>: <p>An object with the following values:</p>
+ </li>
+  </ul>
+  
+  
+  
+</div>
+    
+    
+    
+
+
+    	
+    		
+    			<section class="body">
+    <h2>Use</h2>
+<p><code>scope.computeData(key, options)</code> is used heavily by [can-mustache] to get the value of
+a [can-mustache.key key] value in a template. Configure how it reads values in the
+scope and what values it returns with the [can-view-scope.readOptions options] argument.</p>
+<pre><code>var context = new Map({
+  name: {first: &quot;Curtis&quot;}
+})
+var scope = new Scope(context)
+var computeData = scope.computeData(&quot;name.first&quot;);
+
+computeData.scope === scope //-&gt; true
+computeData.initialValue    //-&gt; &quot;Curtis&quot;
+computeData.compute()       //-&gt; &quot;Curtis&quot;
+</code></pre>
+<p>The <code>compute</code> value is writable.  For example:</p>
+<pre><code>computeData.compute(&quot;Andy&quot;)
+context.attr(&quot;name.first&quot;) //-&gt; &quot;Andy&quot;
+</code></pre>
+
+</section>
+
+    		
+    	
+
+    </article>
+  </div>
+</div>
+
+  <footer><p>CanJS is part of <a href="http://donejs.com">DoneJS</a>. Created and maintained by the open source team at <a href="http://bitovi.com">Bitovi</a>. <strong>Currently v3.0.0.</strong></p></footer>
+	<script type="text/javascript">
+		var docObject = {"content":"<div class=\"main-container\">\n  \n  \t<nav class=\"sidebar\">\n    \n        \n\n    \n</nav>\n  \n\n  <div class=\"content-container\">\n    <article>\n    \t\n    \t\t<section class=\"title\">\n\t<h1>computeData</h1>\n</section>\n\n    \t\n\n        \n\n    \t\n    \t\t\n    \t\t\t<section class=\"description\">\n    \n</section>\n\n    \t\t\n    \t\n\n    \n    \n    \n    <div class=\"signature\">\n  <h2 class=\"signature-title\"><code>scope.computeData(key)</code></h2>\n  \n  \n  \n  <div class=\"parameters\">\n    <h3 class=\"parameters-title\">Parameters</h3>\n      <ol>\n        \n          <li><b>key</b> <code>{can-mustache.key}</code>: <p>A dot seperated path.  Use <code>&quot;.&quot;</code> if you have a\nproperty name that includes a dot.</p>\n</li>\n        \n          <li><b>options</b> <code>{can-view-scope.readOptions}</code>: <p>Options that configure how the <code>key</code> gets read.</p>\n</li>\n        \n      </ol>\n  </div>\n  \n  \n  \n  <ul>\n      <li><b>returns</b>  <code>{Object}</code>: <p>An object with the following values:</p>\n </li>\n  </ul>\n  \n  \n  \n</div>\n    \n    \n    \n\n\n    \t\n    \t\t\n    \t\t\t<section class=\"body\">\n    <h2>Use</h2>\n<p><code>scope.computeData(key, options)</code> is used heavily by [can-mustache] to get the value of\na [can-mustache.key key] value in a template. Configure how it reads values in the\nscope and what values it returns with the [can-view-scope.readOptions options] argument.</p>\n<pre><code>var context = new Map({\n  name: {first: &quot;Curtis&quot;}\n})\nvar scope = new Scope(context)\nvar computeData = scope.computeData(&quot;name.first&quot;);\n\ncomputeData.scope === scope //-&gt; true\ncomputeData.initialValue    //-&gt; &quot;Curtis&quot;\ncomputeData.compute()       //-&gt; &quot;Curtis&quot;\n</code></pre>\n<p>The <code>compute</code> value is writable.  For example:</p>\n<pre><code>computeData.compute(&quot;Andy&quot;)\ncontext.attr(&quot;name.first&quot;) //-&gt; &quot;Andy&quot;\n</code></pre>\n\n</section>\n\n    \t\t\n    \t\n\n    </article>\n  </div>\n</div>\n","src":{"path":"node_modules/can-view-scope/docs/compute_data.md"},"description":"\n","title":"computeData","name":"can-view-scope.computeData","type":"function","signatures":[{"code":"scope.computeData(key)","description":"\n","params":[{"types":[{"type":"can-mustache.key"}],"name":"key","description":"A dot seperated path.  Use `\".\"` if you have a\nproperty name that includes a dot.\n"},{"types":[{"type":"can-view-scope.readOptions"}],"optional":true,"name":"options","description":"Options that configure how the `key` gets read.\n"}],"returns":{"types":[{"type":"Object","options":[{"name":"compute","description":"A compute that returns the\nvalue of `key` looked up in the scope's context or parent context. This compute can\nalso be written to, which will set the observable attribute or compute value at the\nlocation represented by the key.\n","types":[{"type":"can-compute.computed"}]},{"name":"scope","description":"The scope the key was found within. The key might have\nbeen found in a parent scope.\n","types":[{"type":"can-view-scope"}]},{"name":"initialData","description":"The initial value at the key's location.\n","types":[{"type":"*"}]}]}],"description":"An object with the following values:\n"}}],"_curParam":{"types":[{"type":"can-view-scope.readOptions"}],"optional":true,"name":"options","description":"Options that configure how the `key` gets read.\n"},"_curReturn":{"types":[{"type":"Object","options":[{"name":"compute","description":"A compute that returns the\nvalue of `key` looked up in the scope's context or parent context. This compute can\nalso be written to, which will set the observable attribute or compute value at the\nlocation represented by the key.\n","types":[{"type":"can-compute.computed"}]},{"name":"scope","description":"The scope the key was found within. The key might have\nbeen found in a parent scope.\n","types":[{"type":"can-view-scope"}]},{"name":"initialData","description":"The initial value at the key's location.\n","types":[{"type":"*"}]}]}],"description":"An object with the following values:\n"},"types":[],"comment":" "};
+	</script>
+
+	
+		<script>
+		  steal = {
+		    instantiated: {
+		      "bundles/bit-docs-site/static.css!$css" : null
+		    }
+		  }
+		</script>
+		<script type='text/javascript'
+				data-main="bit-docs-site/static"
+				src="./static/node_modules/steal/steal.production.js"></script>
+	
+</body>
+
+</html>

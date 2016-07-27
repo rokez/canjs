@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--####################################################################
+	THIS IS A GENERATED FILE -- ANY CHANGES MADE WILL BE OVERWRITTEN
+
+	INSTEAD CHANGE:
+	source: [object Object]
+	@function can-route.link
+######################################################################## -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<link rel="stylesheet" type="text/css" href="./static/bundles/bit-docs-site/static.css">
+	
+</head>
+
+<body>
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger">Menu</label>
+  <header><nav class="navbar">
+	<a class="brand" href="../index.html">CanJS</a>
+
+	<ul class="bitovi-menu">
+		<li class="dropdown">
+			<a href="http://bitovi.com" class="bitovi icon-bits">Bitovi</a>
+			<ul class="dropdown-menu">
+				<li><a href="http://bitovi.com">Bitovi.com</a></li>
+				<li><a href="http://bitovi.com/blog/">Blog</a></li>
+				<li><a href="http://bitovi.com/consulting/">Consulting</a></li>
+				<li><a href="http://bitovi.com/training/">Training</a></li>
+				<li><a href="http://bitovi.com/open-source/">Open Source</a></li>
+			</ul>
+		</li>
+	</ul>
+
+	<ul class="navbar-items">
+		<li class="dropdown">
+				<a href="http://github.com/canjs/canjs">Github</a>
+				<ul class="dropdown-menu">
+      		<li><a href="http://github.com/canjs/can-connect">can-connect</a></li>
+					<li><a href=".">can-set</a></li>
+					<li><a href=".">can-compute</a></li>
+					<li><a href=".">can-component</a></li>
+				</ul>
+		</li>
+		<li>
+			<a href="https://gitter.im/canjs/canjs">Chat</a>
+		</li>
+		<li>
+			<a href="http://forums.donejs.com/c/canjs">Forum</a>
+		</li>
+	</ul>
+
+</nav>
+</header>
+  	<div class="main-container">
+  
+  	<nav class="sidebar">
+    
+        
+
+    
+</nav>
+  
+
+  <div class="content-container">
+    <article>
+    	
+    		<section class="title">
+	<h1>link</h1>
+</section>
+
+    	
+
+        
+
+    	
+    		
+    	
+
+    
+    
+    
+    <div class="signature">
+  <h2 class="signature-title"><code>route.link(innerText, data, props [, merge])</code></h2>
+  <p>Make an anchor tag (<code>&lt;A&gt;</code>) that when clicked on will updatecanRoute's properties
+to match those in <code>data</code>.</p>
+
+  
+  
+  <div class="parameters">
+    <h3 class="parameters-title">Parameters</h3>
+      <ol>
+        
+          <li><b>innerText</b> <code>{Object}</code>: <p>The text inside the link.</p>
+</li>
+        
+          <li><b>data</b> <code>{Object}</code>: <p>The data to populate the route with.</p>
+</li>
+        
+          <li><b>props</b> <code>{Object}</code>: <p>Properties for the anchor other than <code>href</code>.</p>
+</li>
+        
+          <li><b>merge</b> <code>{Boolean}</code>: <p>Whether the given options should be merged into the current state of the route.</p>
+</li>
+        
+      </ol>
+  </div>
+  
+  
+  
+  <ul>
+      <li><b>returns</b>  <code>{String}</code>: <p>A string with an anchor tag that points to the populated route.</p>
+ </li>
+  </ul>
+  
+  
+  
+</div>
+    
+    
+    
+
+
+    	
+    		
+    			<section class="body">
+    <p>Creates and returns an anchor tag with an href of the route
+attributes passed into it, as well as any properties desired
+for the tag.</p>
+<p>canRoute.link( &quot;My videos&quot;, { type: &quot;videos&quot; }, {}, false )
+// -&gt; <a href="#!type=videos">My videos</a></p>
+<p>Other attributes besides href can be added to the anchor tag
+by passing in a data object with the attributes desired.</p>
+<p>canRoute.link( &quot;My videos&quot;, { type: &quot;videos&quot; },
+{ className: &quot;new&quot; }, false )
+// -&gt; <a href="#!type=videos" class="new">My Videos</a></p>
+<p>It is possible to utilize the current route options when making anchor
+tags in order to make your code more reusable. If merge is set to true,
+the route options passed into <code>canRoute.link</code> will be passed into the
+current ones.</p>
+<pre><code>location.hash = &quot;#!type=videos&quot;
+</code></pre>
+<p>canRoute.link( &quot;The zoo&quot;, { id: 5 }, true )
+// -&gt; <a href="#!type=videos&id=5">The zoo</true></p>
+<pre><code>location.hash = &quot;#!type=pictures&quot;
+</code></pre>
+<p>canRoute.link( &quot;The zoo&quot;, { id: 5 }, true )
+// -&gt; <a href="#!type=pictures&id=5">The zoo</true></p>
+
+</section>
+
+    		
+    	
+
+    </article>
+  </div>
+</div>
+
+  <footer><p>CanJS is part of <a href="http://donejs.com">DoneJS</a>. Created and maintained by the open source team at <a href="http://bitovi.com">Bitovi</a>. <strong>Currently v3.0.0.</strong></p></footer>
+	<script type="text/javascript">
+		var docObject = {"content":"<div class=\"main-container\">\n  \n  \t<nav class=\"sidebar\">\n    \n        \n\n    \n</nav>\n  \n\n  <div class=\"content-container\">\n    <article>\n    \t\n    \t\t<section class=\"title\">\n\t<h1>link</h1>\n</section>\n\n    \t\n\n        \n\n    \t\n    \t\t\n    \t\n\n    \n    \n    \n    <div class=\"signature\">\n  <h2 class=\"signature-title\"><code>route.link(innerText, data, props [, merge])</code></h2>\n  <p>Make an anchor tag (<code>&lt;A&gt;</code>) that when clicked on will updatecanRoute's properties\nto match those in <code>data</code>.</p>\n\n  \n  \n  <div class=\"parameters\">\n    <h3 class=\"parameters-title\">Parameters</h3>\n      <ol>\n        \n          <li><b>innerText</b> <code>{Object}</code>: <p>The text inside the link.</p>\n</li>\n        \n          <li><b>data</b> <code>{Object}</code>: <p>The data to populate the route with.</p>\n</li>\n        \n          <li><b>props</b> <code>{Object}</code>: <p>Properties for the anchor other than <code>href</code>.</p>\n</li>\n        \n          <li><b>merge</b> <code>{Boolean}</code>: <p>Whether the given options should be merged into the current state of the route.</p>\n</li>\n        \n      </ol>\n  </div>\n  \n  \n  \n  <ul>\n      <li><b>returns</b>  <code>{String}</code>: <p>A string with an anchor tag that points to the populated route.</p>\n </li>\n  </ul>\n  \n  \n  \n</div>\n    \n    \n    \n\n\n    \t\n    \t\t\n    \t\t\t<section class=\"body\">\n    <p>Creates and returns an anchor tag with an href of the route\nattributes passed into it, as well as any properties desired\nfor the tag.</p>\n<p>canRoute.link( &quot;My videos&quot;, { type: &quot;videos&quot; }, {}, false )\n// -&gt; <a href=\"#!type=videos\">My videos</a></p>\n<p>Other attributes besides href can be added to the anchor tag\nby passing in a data object with the attributes desired.</p>\n<p>canRoute.link( &quot;My videos&quot;, { type: &quot;videos&quot; },\n{ className: &quot;new&quot; }, false )\n// -&gt; <a href=\"#!type=videos\" class=\"new\">My Videos</a></p>\n<p>It is possible to utilize the current route options when making anchor\ntags in order to make your code more reusable. If merge is set to true,\nthe route options passed into <code>canRoute.link</code> will be passed into the\ncurrent ones.</p>\n<pre><code>location.hash = &quot;#!type=videos&quot;\n</code></pre>\n<p>canRoute.link( &quot;The zoo&quot;, { id: 5 }, true )\n// -&gt; <a href=\"#!type=videos&id=5\">The zoo</true></p>\n<pre><code>location.hash = &quot;#!type=pictures&quot;\n</code></pre>\n<p>canRoute.link( &quot;The zoo&quot;, { id: 5 }, true )\n// -&gt; <a href=\"#!type=pictures&id=5\">The zoo</true></p>\n\n</section>\n\n    \t\t\n    \t\n\n    </article>\n  </div>\n</div>\n","type":"function","name":"can-route.link","parent":"canRoute.static","src":{"line":582,"codeLine":626,"path":"node_modules/can-route/can-route.js"},"description":"","title":"link","signatures":[{"code":"route.link(innerText, data, props [, merge])","description":"\n\nMake an anchor tag (`<A>`) that when clicked on will updatecanRoute's properties\nto match those in `data`.\n","params":[{"types":[{"type":"Object","options":[]}],"name":"innerText","description":"The text inside the link."},{"types":[{"type":"Object","options":[]}],"name":"data","description":"The data to populate the route with."},{"types":[{"type":"Object","options":[]}],"name":"props","description":"Properties for the anchor other than `href`."},{"types":[{"type":"Boolean"}],"optional":true,"name":"merge","description":"Whether the given options should be merged into the current state of the route."}],"returns":{"types":[{"type":"String"}],"description":"A string with an anchor tag that points to the populated route.\n"}}],"_curParam":{"types":[{"type":"Boolean"}],"optional":true,"name":"merge","description":"Whether the given options should be merged into the current state of the route."},"_curReturn":{"types":[{"type":"String"}],"description":"A string with an anchor tag that points to the populated route.\n"},"comment":" "};
+	</script>
+
+	
+		<script>
+		  steal = {
+		    instantiated: {
+		      "bundles/bit-docs-site/static.css!$css" : null
+		    }
+		  }
+		</script>
+		<script type='text/javascript'
+				data-main="bit-docs-site/static"
+				src="./static/node_modules/steal/steal.production.js"></script>
+	
+</body>
+
+</html>

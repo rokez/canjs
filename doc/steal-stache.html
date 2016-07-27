@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<!--####################################################################
+	THIS IS A GENERATED FILE -- ANY CHANGES MADE WILL BE OVERWRITTEN
+
+	INSTEAD CHANGE:
+	source: [object Object]
+	@module steal-stache
+######################################################################## -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<link rel="stylesheet" type="text/css" href="./static/bundles/bit-docs-site/static.css">
+	
+</head>
+
+<body>
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger">Menu</label>
+  <header><nav class="navbar">
+	<a class="brand" href="../index.html">CanJS</a>
+
+	<ul class="bitovi-menu">
+		<li class="dropdown">
+			<a href="http://bitovi.com" class="bitovi icon-bits">Bitovi</a>
+			<ul class="dropdown-menu">
+				<li><a href="http://bitovi.com">Bitovi.com</a></li>
+				<li><a href="http://bitovi.com/blog/">Blog</a></li>
+				<li><a href="http://bitovi.com/consulting/">Consulting</a></li>
+				<li><a href="http://bitovi.com/training/">Training</a></li>
+				<li><a href="http://bitovi.com/open-source/">Open Source</a></li>
+			</ul>
+		</li>
+	</ul>
+
+	<ul class="navbar-items">
+		<li class="dropdown">
+				<a href="http://github.com/canjs/canjs">Github</a>
+				<ul class="dropdown-menu">
+      		<li><a href="http://github.com/canjs/can-connect">can-connect</a></li>
+					<li><a href=".">can-set</a></li>
+					<li><a href=".">can-compute</a></li>
+					<li><a href=".">can-component</a></li>
+				</ul>
+		</li>
+		<li>
+			<a href="https://gitter.im/canjs/canjs">Chat</a>
+		</li>
+		<li>
+			<a href="http://forums.donejs.com/c/canjs">Forum</a>
+		</li>
+	</ul>
+
+</nav>
+</header>
+  	<div class="main-container">
+  
+  	<nav class="sidebar">
+    
+        
+	<ul>
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="page"
+							href="can-core.html">
+							Core
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               parent
+                               expanded">
+						<a class="page"
+							href="can-ecosystem.html">
+							Ecosystem
+						</a>
+						
+							
+	<ul>
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="module"
+							href="can-zone.html">
+							can-zone
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="current
+                               parent
+                               expanded">
+						<a class="module"
+							href="steal-stache.html">
+							steal-stache
+						</a>
+						
+							
+
+						
+					</li>
+				
+
+			
+		
+	</ul>
+
+
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="page"
+							href="can-infrastructure.html">
+							Infrastructure
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="page"
+							href="can-legacy.html">
+							Legacy
+						</a>
+						
+					</li>
+				
+
+			
+		
+			
+				
+					<li class="
+                               
+                               ">
+						<a class="page"
+							href="guides.html">
+							Guides
+						</a>
+						
+					</li>
+				
+
+			
+		
+	</ul>
+
+
+    
+</nav>
+  
+
+  <div class="content-container">
+    <article>
+    	
+    		<section class="title">
+	<h1>steal-stache</h1>
+</section>
+
+    	
+
+        
+
+    	
+    		
+    			<section class="description">
+    <p>A <a href="http://stealjs.com">StealJS</a> extension that allows stache templates as dependencies.</p>
+
+</section>
+
+    		
+    	
+
+    
+    
+    
+    <div class="signature">
+  <h2 class="signature-title"><code>STACHE_MODULE_NAME!steal-stache</code></h2>
+  <p>Import a <a href="can-stache.html">stache</a> module in your code and use it to render.</p>
+<pre><code class="language-js">var template = require(&quot;./main.stache&quot;);
+var Map = require(&quot;can-map&quot;);
+
+var map = new Map();
+var frag = template(map);
+
+// frag is a live-bound DocumentFragment
+</code></pre>
+
+  
+  
+  <div class="parameters">
+    <h3 class="parameters-title">Parameters</h3>
+      <ol>
+        
+          <li><b>STACHE_MODULE_NAME</b> <code>{moduleName}</code>: <p>The module name of a stache template. This
+will typically be something like <code>templates/main.stache</code>.</p>
+</li>
+        
+      </ol>
+  </div>
+  
+  
+  
+  <ul>
+      <li><b>returns</b>  <code>{<a href="can-stache.renderer.html" >renderer</a>(Object, Object, data, helpers)}</code>: <p>A renderer function that will render the template into a document fragment.</p>
+ </li>
+  </ul>
+  
+  
+  
+</div>
+    
+    
+    
+
+
+    	
+    		
+    			<section class="body">
+    <h2>Use</h2>
+<p>With <a href="http://stealjs.com">StealJS</a> used from <code>node_modules</code>, steal-stache will configure Steal so stache modules can be loaded like:</p>
+<pre><code class="language-js">import todosStache from &quot;todos.stache&quot;
+todosStache([{name: &quot;dishes&quot;}]) //-&gt; &lt;documentFragment&gt;
+</code></pre>
+<h2>Specifying Dependencies</h2>
+<p>This plugin allows <a href="can-view-import.html">&lt;can-import&gt;</a> elements that specify
+template dependencies:</p>
+<pre><code>&lt;can-import from=&quot;components/my_tabs&quot;/&gt;
+&lt;can-import from=&quot;helpers/prettyDate&quot;/&gt;
+
+&lt;my-tabs&gt;
+  &lt;my-panel title=&quot;{{prettyDate start}}&quot;&gt;...&lt;/my-panel&gt;
+  &lt;my-panel title=&quot;{{prettyDate end}}&quot;&gt;...&lt;/my-panel&gt;
+&lt;/my-tabs&gt;
+</code></pre>
+
+</section>
+
+    		
+    	
+
+    </article>
+  </div>
+</div>
+
+  <footer><p>CanJS is part of <a href="http://donejs.com">DoneJS</a>. Created and maintained by the open source team at <a href="http://bitovi.com">Bitovi</a>. <strong>Currently v3.0.0.</strong></p></footer>
+	<script type="text/javascript">
+		var docObject = {"content":"<div class=\"main-container\">\n  \n  \t<nav class=\"sidebar\">\n    \n        \n\t<ul>\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"page\"\n\t\t\t\t\t\t\thref=\"can-core.html\">\n\t\t\t\t\t\t\tCore\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               parent\n                               expanded\">\n\t\t\t\t\t\t<a class=\"page\"\n\t\t\t\t\t\t\thref=\"can-ecosystem.html\">\n\t\t\t\t\t\t\tEcosystem\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\t<ul>\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"can-zone.html\">\n\t\t\t\t\t\t\tcan-zone\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"current\n                               parent\n                               expanded\">\n\t\t\t\t\t\t<a class=\"module\"\n\t\t\t\t\t\t\thref=\"steal-stache.html\">\n\t\t\t\t\t\t\tsteal-stache\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t\t\t\n\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t</ul>\n\n\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"page\"\n\t\t\t\t\t\t\thref=\"can-infrastructure.html\">\n\t\t\t\t\t\t\tInfrastructure\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"page\"\n\t\t\t\t\t\t\thref=\"can-legacy.html\">\n\t\t\t\t\t\t\tLegacy\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\t\n\t\t\t\t\t<li class=\"\n                               \n                               \">\n\t\t\t\t\t\t<a class=\"page\"\n\t\t\t\t\t\t\thref=\"guides.html\">\n\t\t\t\t\t\t\tGuides\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\n\t\t\t\t\t</li>\n\t\t\t\t\n\n\t\t\t\n\t\t\n\t</ul>\n\n\n    \n</nav>\n  \n\n  <div class=\"content-container\">\n    <article>\n    \t\n    \t\t<section class=\"title\">\n\t<h1>steal-stache</h1>\n</section>\n\n    \t\n\n        \n\n    \t\n    \t\t\n    \t\t\t<section class=\"description\">\n    <p>A <a href=\"http://stealjs.com\">StealJS</a> extension that allows stache templates as dependencies.</p>\n\n</section>\n\n    \t\t\n    \t\n\n    \n    \n    \n    <div class=\"signature\">\n  <h2 class=\"signature-title\"><code>STACHE_MODULE_NAME!steal-stache</code></h2>\n  <p>Import a <a href=\"can-stache.html\">stache</a> module in your code and use it to render.</p>\n<pre><code class=\"language-js\">var template = require(&quot;./main.stache&quot;);\nvar Map = require(&quot;can-map&quot;);\n\nvar map = new Map();\nvar frag = template(map);\n\n// frag is a live-bound DocumentFragment\n</code></pre>\n\n  \n  \n  <div class=\"parameters\">\n    <h3 class=\"parameters-title\">Parameters</h3>\n      <ol>\n        \n          <li><b>STACHE_MODULE_NAME</b> <code>{moduleName}</code>: <p>The module name of a stache template. This\nwill typically be something like <code>templates/main.stache</code>.</p>\n</li>\n        \n      </ol>\n  </div>\n  \n  \n  \n  <ul>\n      <li><b>returns</b>  <code>{<a href=\"can-stache.renderer.html\" >renderer</a>(Object, Object, data, helpers)}</code>: <p>A renderer function that will render the template into a document fragment.</p>\n </li>\n  </ul>\n  \n  \n  \n</div>\n    \n    \n    \n\n\n    \t\n    \t\t\n    \t\t\t<section class=\"body\">\n    <h2>Use</h2>\n<p>With <a href=\"http://stealjs.com\">StealJS</a> used from <code>node_modules</code>, steal-stache will configure Steal so stache modules can be loaded like:</p>\n<pre><code class=\"language-js\">import todosStache from &quot;todos.stache&quot;\ntodosStache([{name: &quot;dishes&quot;}]) //-&gt; &lt;documentFragment&gt;\n</code></pre>\n<h2>Specifying Dependencies</h2>\n<p>This plugin allows <a href=\"can-view-import.html\">&lt;can-import&gt;</a> elements that specify\ntemplate dependencies:</p>\n<pre><code>&lt;can-import from=&quot;components/my_tabs&quot;/&gt;\n&lt;can-import from=&quot;helpers/prettyDate&quot;/&gt;\n\n&lt;my-tabs&gt;\n  &lt;my-panel title=&quot;{{prettyDate start}}&quot;&gt;...&lt;/my-panel&gt;\n  &lt;my-panel title=&quot;{{prettyDate end}}&quot;&gt;...&lt;/my-panel&gt;\n&lt;/my-tabs&gt;\n</code></pre>\n\n</section>\n\n    \t\t\n    \t\n\n    </article>\n  </div>\n</div>\n","src":{"path":"node_modules/steal-stache/steal-stache.md"},"description":"\nA [StealJS](http://stealjs.com) extension that allows stache templates as dependencies.\n","type":"module","title":"","types":[{"type":"Object","options":[]}],"name":"steal-stache","parent":"can-ecosystem","signatures":[{"code":"STACHE_MODULE_NAME!steal-stache","description":"\n\nImport a [can-stache stache] module in your code and use it to render.\n\n```js\nvar template = require(\"./main.stache\");\nvar Map = require(\"can-map\");\n\nvar map = new Map();\nvar frag = template(map);\n\n// frag is a live-bound DocumentFragment\n```\n","params":[{"types":[{"type":"moduleName"}],"name":"STACHE_MODULE_NAME","description":"The module name of a stache template. This\nwill typically be something like `templates/main.stache`.\n"}],"returns":{"types":[{"type":"can-stache.renderer"}],"description":"A renderer function that will render the template into a document fragment.\n"}}],"_curParam":{"types":[{"type":"moduleName"}],"name":"STACHE_MODULE_NAME","description":"The module name of a stache template. This\nwill typically be something like `templates/main.stache`.\n"},"_curReturn":{"types":[{"type":"can-stache.renderer"}],"description":"A renderer function that will render the template into a document fragment.\n"},"comment":" "};
+	</script>
+
+	
+		<script>
+		  steal = {
+		    instantiated: {
+		      "bundles/bit-docs-site/static.css!$css" : null
+		    }
+		  }
+		</script>
+		<script type='text/javascript'
+				data-main="bit-docs-site/static"
+				src="./static/node_modules/steal/steal.production.js"></script>
+	
+</body>
+
+</html>

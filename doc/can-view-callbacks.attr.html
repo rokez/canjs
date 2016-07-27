@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<!--####################################################################
+	THIS IS A GENERATED FILE -- ANY CHANGES MADE WILL BE OVERWRITTEN
+
+	INSTEAD CHANGE:
+	source: [object Object]
+	@function can-view-callbacks.attr
+######################################################################## -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<link rel="stylesheet" type="text/css" href="./static/bundles/bit-docs-site/static.css">
+	
+</head>
+
+<body>
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger">Menu</label>
+  <header><nav class="navbar">
+	<a class="brand" href="../index.html">CanJS</a>
+
+	<ul class="bitovi-menu">
+		<li class="dropdown">
+			<a href="http://bitovi.com" class="bitovi icon-bits">Bitovi</a>
+			<ul class="dropdown-menu">
+				<li><a href="http://bitovi.com">Bitovi.com</a></li>
+				<li><a href="http://bitovi.com/blog/">Blog</a></li>
+				<li><a href="http://bitovi.com/consulting/">Consulting</a></li>
+				<li><a href="http://bitovi.com/training/">Training</a></li>
+				<li><a href="http://bitovi.com/open-source/">Open Source</a></li>
+			</ul>
+		</li>
+	</ul>
+
+	<ul class="navbar-items">
+		<li class="dropdown">
+				<a href="http://github.com/canjs/canjs">Github</a>
+				<ul class="dropdown-menu">
+      		<li><a href="http://github.com/canjs/can-connect">can-connect</a></li>
+					<li><a href=".">can-set</a></li>
+					<li><a href=".">can-compute</a></li>
+					<li><a href=".">can-component</a></li>
+				</ul>
+		</li>
+		<li>
+			<a href="https://gitter.im/canjs/canjs">Chat</a>
+		</li>
+		<li>
+			<a href="http://forums.donejs.com/c/canjs">Forum</a>
+		</li>
+	</ul>
+
+</nav>
+</header>
+  	<div class="main-container">
+  
+  	<nav class="sidebar">
+    
+        
+
+    
+</nav>
+  
+
+  <div class="content-container">
+    <article>
+    	
+    		<section class="title">
+	<h1>attr</h1>
+</section>
+
+    	
+
+        
+
+    	
+    		
+    			<section class="description">
+    <p>Register custom behavior for an attribute.</p>
+
+</section>
+
+    		
+    	
+
+    
+    
+    
+    <div class="signature">
+  <h2 class="signature-title"><code>callbacks.attr(attributeName, attrHandler(el, attrData))</code></h2>
+  <pre><code class="language-js">var callbacks = require(&quot;can-view-callbacks&quot;);
+
+callbacks.attr(&quot;show-when&quot;, function(el, attrData){
+    var prop = el.getAttribute(&quot;show-when&quot;);
+    var compute = attrData.compute(prop);
+
+    var showOrHide = function(){
+        var val = compute();
+        if(val) {
+            el.style.display = 'block';
+        } else {
+            el.style.display = 'hidden';
+        }
+    };
+
+    compute.bind(&quot;change&quot;, showOrHide);
+    showOrHide();
+
+    el.addEventListener(&quot;removed&quot;, function onremove(){
+        compute.unbind(&quot;change&quot;, showOrHide);
+        el.removeEventListener(&quot;removed&quot;, onremove);
+    });
+});
+</code></pre>
+
+  
+  
+  <div class="parameters">
+    <h3 class="parameters-title">Parameters</h3>
+      <ol>
+        
+          <li><b>attributeName</b> <code>{String|RegExp}</code>: <p>A lower-case attribute name or regular expression
+that matches attribute names. Examples: <code>&quot;my-fill&quot;</code> or <code>/my-\w/</code>.</p>
+</li>
+        
+          <li><b>attrHandler</b> <code>{function(el, attrData)}</code>: <p>A function that adds custom behavior to <code>el</code>.</p>
+</li>
+        
+      </ol>
+  </div>
+  
+  
+  
+  
+  
+</div>
+    
+    
+    
+
+
+    	
+    		
+    			<section class="body">
+    <p>Registers the <code>attrHandler</code> callback when <code>attributeName</code> is found
+in a template.</p>
+<h2>Use</h2>
+<p><code>can.view.attr</code> is used to add custom behavior to elements that contain a
+specified html attribute. Typically it is used to mixin behavior (whereas
+[can.view.tag] is used to define behavior).</p>
+<p>The following example adds a jQueryUI tooltip to any element that has
+a <code>tooltip</code> attribute like <code>&lt;div tooltip=&quot;Click to edit&quot;&gt;Name&lt;/div&gt;</code>.</p>
+<div class='demo_wrapper' data-demo-src='can/view/doc/tooltip.html'></div>
+<h2>Listening to attribute changes</h2>
+<p>In the previous example, the content of the tooltip was static. However,
+it's likely that the tooltip's value might change. For instance, the template
+might want to dynamically update the tooltip like:</p>
+<pre><code>&lt;button tooltip=&quot;{{deleteTooltip}}&quot;&gt;
+  Delete
+&lt;/button&gt;
+</code></pre>
+<p>Where <code>deleteTooltip</code> changes depending on how many users are selected:</p>
+<pre><code>deleteTooltip: function(){
+  var selectedCount = selected.attr(&quot;length&quot;);
+  if(selectedCount) {
+    return &quot;Delete &quot;+selectedCount+&quot; users&quot;;
+  } else {
+    return &quot;Select users to delete them.&quot;;
+  }
+}
+</code></pre>
+<p>The [can.events.attributes attributes] event can be used to listen to when
+the toolip attribute changes its value like:</p>
+<pre><code>can.view.attr(&quot;tooltip&quot;, function( el, attrData ) {
+
+  var updateTooltip = function(){
+    $(el).tooltip({
+      content: el.getAttribute(&quot;tooltip&quot;), 
+      items: &quot;[tooltip]&quot;
+    });
+  };
+  
+  $(el).bind(&quot;attributes&quot;, function(ev){
+    if(ev.attributeName === &quot;tooltip&quot;) {
+      updateTooltip();
+    }
+  });
+  
+  updateTooltip();
+        
+})
+</code></pre>
+<p>To see this behavior in the following demo, hover the mouse over the &quot;Delete&quot; button.  Then
+select some users and hover over the &quot;Delete&quot; button again:</p>
+<div class='demo_wrapper' data-demo-src='can/view/doc/dynamic_tooltip.html'></div>
+<h2>Reading values from the scope.</h2>
+<p>It's common that attribute mixins need complex, observable data to
+perform rich behavior. The attribute mixin is able to read
+data from the element's <a href="can.view.Scope.html">scope</a>. For example,
+<strong>toggle</strong> and <strong>fade-in-when</strong> will need the value of <code>showing</code> in:</p>
+<pre><code>&lt;button toggle=&quot;showing&quot;&gt;
+  {{#showing}}Show{{else}}Hide{{/showing}} more info&lt;/button&gt;
+&lt;div fade-in-when=&quot;showing&quot;&gt;
+  Here is more info!
+&lt;/div&gt;
+</code></pre>
+<p>These values can be read from [can.view.attrData attrData]'s scope like:</p>
+<pre><code>attrData.scope.attr(&quot;showing&quot;)
+</code></pre>
+<p>But often, you want to update scope value or listen when the scope value
+changes. For example, the <strong>toggle</strong> mixin might want to update <code>showing</code>
+and the <strong>fade-in-when</strong> mixin needs to know when
+the <code>showing</code> changes.  Both of these can be achived by
+using [can.view.Scope::compute compute] to get a get/set compute that is
+tied to the value in the scope:</p>
+<pre><code>var showing = attrData.scope.compute(&quot;showing&quot;)
+</code></pre>
+<p>This value can be written to by <code>toggle</code>:</p>
+<pre><code>can.view.attr(&quot;toggle&quot;, function(el, attrData){
+
+  var attrValue = el.getAttribute(&quot;toggle&quot;)
+      toggleCompute = attrData.scope.compute(attrValue);
+
+  $(el).click(function(){
+    toggleCompute(! toggleCompute() )
+  })
+
+})
+</code></pre>
+<p>Or listened to by <code>fade-in-when</code>:</p>
+<pre><code>can.view.attr(&quot;fade-in-when&quot;, function( el, attrData ) {
+  var attrValue = el.getAttribute(&quot;fade-in-when&quot;);
+      fadeInCompute = attrData.scope.compute(attrValue),
+      handler = function(ev, newVal, oldVal){
+        if(newVal &amp;&amp; !oldVal) {
+          $(el).fadeIn(&quot;slow&quot;)
+        } else if(!newVal){
+          $(el).hide()
+        }
+      }
+
+  fadeInCompute.bind(&quot;change&quot;,handler);
+
+  ...
+})
+</code></pre>
+<p>When you listen to something other than the attribute's element, remember to
+unbind the event handler when the element is [can.events.removed removed] from the page:</p>
+<pre><code>$(el).bind(&quot;removed&quot;, function(){
+  fadeInCompute.unbind(handler);
+});
+</code></pre>
+<div class='demo_wrapper' data-demo-src='can/view/doc/fade_in_when.html'></div>
+<h2>When to call</h2>
+<p><code>can.view.attr</code> must be called before a template is processed. When <a href="http://canjs.com/docs/can.view.html#sig_can_view_idOrUrl_">using <code>can.view</code> to create a renderer function</a>, <code>can.view.attr</code> must be called before the template is loaded, not simply before it is rendered.</p>
+<pre><code>    //Call can.view.attr first
+    can.view.attr('tooltip', tooltipFunction);
+    //Preload a template for rendering
+    var renderer = can.view('app-template');
+    //No calls to can.view.attr after this will be used by `renderer`
+</code></pre>
+
+</section>
+
+    		
+    	
+
+    </article>
+  </div>
+</div>
+
+  <footer><p>CanJS is part of <a href="http://donejs.com">DoneJS</a>. Created and maintained by the open source team at <a href="http://bitovi.com">Bitovi</a>. <strong>Currently v3.0.0.</strong></p></footer>
+	<script type="text/javascript">
+		var docObject = {"content":"<div class=\"main-container\">\n  \n  \t<nav class=\"sidebar\">\n    \n        \n\n    \n</nav>\n  \n\n  <div class=\"content-container\">\n    <article>\n    \t\n    \t\t<section class=\"title\">\n\t<h1>attr</h1>\n</section>\n\n    \t\n\n        \n\n    \t\n    \t\t\n    \t\t\t<section class=\"description\">\n    <p>Register custom behavior for an attribute.</p>\n\n</section>\n\n    \t\t\n    \t\n\n    \n    \n    \n    <div class=\"signature\">\n  <h2 class=\"signature-title\"><code>callbacks.attr(attributeName, attrHandler(el, attrData))</code></h2>\n  <pre><code class=\"language-js\">var callbacks = require(&quot;can-view-callbacks&quot;);\n\ncallbacks.attr(&quot;show-when&quot;, function(el, attrData){\n    var prop = el.getAttribute(&quot;show-when&quot;);\n    var compute = attrData.compute(prop);\n\n    var showOrHide = function(){\n        var val = compute();\n        if(val) {\n            el.style.display = 'block';\n        } else {\n            el.style.display = 'hidden';\n        }\n    };\n\n    compute.bind(&quot;change&quot;, showOrHide);\n    showOrHide();\n\n    el.addEventListener(&quot;removed&quot;, function onremove(){\n        compute.unbind(&quot;change&quot;, showOrHide);\n        el.removeEventListener(&quot;removed&quot;, onremove);\n    });\n});\n</code></pre>\n\n  \n  \n  <div class=\"parameters\">\n    <h3 class=\"parameters-title\">Parameters</h3>\n      <ol>\n        \n          <li><b>attributeName</b> <code>{String|RegExp}</code>: <p>A lower-case attribute name or regular expression\nthat matches attribute names. Examples: <code>&quot;my-fill&quot;</code> or <code>/my-\\w/</code>.</p>\n</li>\n        \n          <li><b>attrHandler</b> <code>{function(el, attrData)}</code>: <p>A function that adds custom behavior to <code>el</code>.</p>\n</li>\n        \n      </ol>\n  </div>\n  \n  \n  \n  \n  \n</div>\n    \n    \n    \n\n\n    \t\n    \t\t\n    \t\t\t<section class=\"body\">\n    <p>Registers the <code>attrHandler</code> callback when <code>attributeName</code> is found\nin a template.</p>\n<h2>Use</h2>\n<p><code>can.view.attr</code> is used to add custom behavior to elements that contain a\nspecified html attribute. Typically it is used to mixin behavior (whereas\n[can.view.tag] is used to define behavior).</p>\n<p>The following example adds a jQueryUI tooltip to any element that has\na <code>tooltip</code> attribute like <code>&lt;div tooltip=&quot;Click to edit&quot;&gt;Name&lt;/div&gt;</code>.</p>\n<div class='demo_wrapper' data-demo-src='can/view/doc/tooltip.html'></div>\n<h2>Listening to attribute changes</h2>\n<p>In the previous example, the content of the tooltip was static. However,\nit's likely that the tooltip's value might change. For instance, the template\nmight want to dynamically update the tooltip like:</p>\n<pre><code>&lt;button tooltip=&quot;{{deleteTooltip}}&quot;&gt;\n  Delete\n&lt;/button&gt;\n</code></pre>\n<p>Where <code>deleteTooltip</code> changes depending on how many users are selected:</p>\n<pre><code>deleteTooltip: function(){\n  var selectedCount = selected.attr(&quot;length&quot;);\n  if(selectedCount) {\n    return &quot;Delete &quot;+selectedCount+&quot; users&quot;;\n  } else {\n    return &quot;Select users to delete them.&quot;;\n  }\n}\n</code></pre>\n<p>The [can.events.attributes attributes] event can be used to listen to when\nthe toolip attribute changes its value like:</p>\n<pre><code>can.view.attr(&quot;tooltip&quot;, function( el, attrData ) {\n\n  var updateTooltip = function(){\n    $(el).tooltip({\n      content: el.getAttribute(&quot;tooltip&quot;), \n      items: &quot;[tooltip]&quot;\n    });\n  };\n  \n  $(el).bind(&quot;attributes&quot;, function(ev){\n    if(ev.attributeName === &quot;tooltip&quot;) {\n      updateTooltip();\n    }\n  });\n  \n  updateTooltip();\n        \n})\n</code></pre>\n<p>To see this behavior in the following demo, hover the mouse over the &quot;Delete&quot; button.  Then\nselect some users and hover over the &quot;Delete&quot; button again:</p>\n<div class='demo_wrapper' data-demo-src='can/view/doc/dynamic_tooltip.html'></div>\n<h2>Reading values from the scope.</h2>\n<p>It's common that attribute mixins need complex, observable data to\nperform rich behavior. The attribute mixin is able to read\ndata from the element's <a href=\"can.view.Scope.html\">scope</a>. For example,\n<strong>toggle</strong> and <strong>fade-in-when</strong> will need the value of <code>showing</code> in:</p>\n<pre><code>&lt;button toggle=&quot;showing&quot;&gt;\n  {{#showing}}Show{{else}}Hide{{/showing}} more info&lt;/button&gt;\n&lt;div fade-in-when=&quot;showing&quot;&gt;\n  Here is more info!\n&lt;/div&gt;\n</code></pre>\n<p>These values can be read from [can.view.attrData attrData]'s scope like:</p>\n<pre><code>attrData.scope.attr(&quot;showing&quot;)\n</code></pre>\n<p>But often, you want to update scope value or listen when the scope value\nchanges. For example, the <strong>toggle</strong> mixin might want to update <code>showing</code>\nand the <strong>fade-in-when</strong> mixin needs to know when\nthe <code>showing</code> changes.  Both of these can be achived by\nusing [can.view.Scope::compute compute] to get a get/set compute that is\ntied to the value in the scope:</p>\n<pre><code>var showing = attrData.scope.compute(&quot;showing&quot;)\n</code></pre>\n<p>This value can be written to by <code>toggle</code>:</p>\n<pre><code>can.view.attr(&quot;toggle&quot;, function(el, attrData){\n\n  var attrValue = el.getAttribute(&quot;toggle&quot;)\n      toggleCompute = attrData.scope.compute(attrValue);\n\n  $(el).click(function(){\n    toggleCompute(! toggleCompute() )\n  })\n\n})\n</code></pre>\n<p>Or listened to by <code>fade-in-when</code>:</p>\n<pre><code>can.view.attr(&quot;fade-in-when&quot;, function( el, attrData ) {\n  var attrValue = el.getAttribute(&quot;fade-in-when&quot;);\n      fadeInCompute = attrData.scope.compute(attrValue),\n      handler = function(ev, newVal, oldVal){\n        if(newVal &amp;&amp; !oldVal) {\n          $(el).fadeIn(&quot;slow&quot;)\n        } else if(!newVal){\n          $(el).hide()\n        }\n      }\n\n  fadeInCompute.bind(&quot;change&quot;,handler);\n\n  ...\n})\n</code></pre>\n<p>When you listen to something other than the attribute's element, remember to\nunbind the event handler when the element is [can.events.removed removed] from the page:</p>\n<pre><code>$(el).bind(&quot;removed&quot;, function(){\n  fadeInCompute.unbind(handler);\n});\n</code></pre>\n<div class='demo_wrapper' data-demo-src='can/view/doc/fade_in_when.html'></div>\n<h2>When to call</h2>\n<p><code>can.view.attr</code> must be called before a template is processed. When <a href=\"http://canjs.com/docs/can.view.html#sig_can_view_idOrUrl_\">using <code>can.view</code> to create a renderer function</a>, <code>can.view.attr</code> must be called before the template is loaded, not simply before it is rendered.</p>\n<pre><code>    //Call can.view.attr first\n    can.view.attr('tooltip', tooltipFunction);\n    //Preload a template for rendering\n    var renderer = can.view('app-template');\n    //No calls to can.view.attr after this will be used by `renderer`\n</code></pre>\n\n</section>\n\n    \t\t\n    \t\n\n    </article>\n  </div>\n</div>\n","src":{"path":"node_modules/can-view-callbacks/docs/attr.md"},"description":"\nRegister custom behavior for an attribute.\n","title":"attr","name":"can-view-callbacks.attr","type":"function","signatures":[{"code":"callbacks.attr(attributeName, attrHandler(el, attrData))","description":"\n\n```js\nvar callbacks = require(\"can-view-callbacks\");\n\ncallbacks.attr(\"show-when\", function(el, attrData){\n\tvar prop = el.getAttribute(\"show-when\");\n\tvar compute = attrData.compute(prop);\n\n\tvar showOrHide = function(){\n\t\tvar val = compute();\n\t\tif(val) {\n\t\t\tel.style.display = 'block';\n\t\t} else {\n\t\t\tel.style.display = 'hidden';\n\t\t}\n\t};\n\n\tcompute.bind(\"change\", showOrHide);\n\tshowOrHide();\n\n\tel.addEventListener(\"removed\", function onremove(){\n\t\tcompute.unbind(\"change\", showOrHide);\n\t\tel.removeEventListener(\"removed\", onremove);\n\t});\n});\n```\n","params":[{"types":[{"type":"String"},{"type":"RegExp"}],"name":"attributeName","description":"A lower-case attribute name or regular expression\nthat matches attribute names. Examples: `\"my-fill\"` or `/my-\\w/`.  \n"},{"types":[{"type":"function","returns":{"types":[{"type":"undefined"}]},"params":[{"types":[{"type":"HTMLElement"}],"name":"el"},{"types":[{"type":"can.view.attrData"}],"name":"attrData"}]}],"name":"attrHandler","description":"\n\nA function that adds custom behavior to `el`.  \n"}],"release":"2.1"}],"_curParam":{"types":[{"type":"function","returns":{"types":[{"type":"undefined"}]},"params":[{"types":[{"type":"HTMLElement"}],"name":"el"},{"types":[{"type":"can.view.attrData"}],"name":"attrData"}]}],"name":"attrHandler","description":"\n\nA function that adds custom behavior to `el`.  \n"},"comment":" "};
+	</script>
+
+	
+		<script>
+		  steal = {
+		    instantiated: {
+		      "bundles/bit-docs-site/static.css!$css" : null
+		    }
+		  }
+		</script>
+		<script type='text/javascript'
+				data-main="bit-docs-site/static"
+				src="./static/node_modules/steal/steal.production.js"></script>
+	
+</body>
+
+</html>

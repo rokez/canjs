@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--####################################################################
+	THIS IS A GENERATED FILE -- ANY CHANGES MADE WILL BE OVERWRITTEN
+
+	INSTEAD CHANGE:
+	source: [object Object]
+	@typedef can.Control.processor
+######################################################################## -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	<link rel="stylesheet" type="text/css" href="./static/bundles/bit-docs-site/static.css">
+	
+</head>
+
+<body>
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger">Menu</label>
+  <header><nav class="navbar">
+	<a class="brand" href="../index.html">CanJS</a>
+
+	<ul class="bitovi-menu">
+		<li class="dropdown">
+			<a href="http://bitovi.com" class="bitovi icon-bits">Bitovi</a>
+			<ul class="dropdown-menu">
+				<li><a href="http://bitovi.com">Bitovi.com</a></li>
+				<li><a href="http://bitovi.com/blog/">Blog</a></li>
+				<li><a href="http://bitovi.com/consulting/">Consulting</a></li>
+				<li><a href="http://bitovi.com/training/">Training</a></li>
+				<li><a href="http://bitovi.com/open-source/">Open Source</a></li>
+			</ul>
+		</li>
+	</ul>
+
+	<ul class="navbar-items">
+		<li class="dropdown">
+				<a href="http://github.com/canjs/canjs">Github</a>
+				<ul class="dropdown-menu">
+      		<li><a href="http://github.com/canjs/can-connect">can-connect</a></li>
+					<li><a href=".">can-set</a></li>
+					<li><a href=".">can-compute</a></li>
+					<li><a href=".">can-component</a></li>
+				</ul>
+		</li>
+		<li>
+			<a href="https://gitter.im/canjs/canjs">Chat</a>
+		</li>
+		<li>
+			<a href="http://forums.donejs.com/c/canjs">Forum</a>
+		</li>
+	</ul>
+
+</nav>
+</header>
+  	<div class="main-container">
+  
+  	<nav class="sidebar">
+    
+        
+
+    
+</nav>
+  
+
+  <div class="content-container">
+    <article>
+    	
+    		<section class="title">
+	<h1>can.Control.processor</h1>
+</section>
+
+    	
+
+        
+
+    	
+    		
+    			<section class="description">
+    <p>A function that handles the binding and unbinding of a <a href="can.Control.html">can.Control</a>'s declarative event method.</p>
+
+</section>
+
+    		
+    	
+
+    
+    
+    
+    <div class="signature">
+  <h2 class="signature-title"><code>function(element, eventName, selector, handler, <a href="can.Control.html" >control</a>)</code></h2>
+  
+  
+  
+  <div class="parameters">
+    <h3 class="parameters-title">Parameters</h3>
+      <ol>
+        
+          <li><b>element</b> <code>{HTMLElement}</code>: <p>the control's element or the object
+specified by the templated event handler (<code>&quot;{object}&quot;</code>).</p>
+</li>
+        
+          <li><b>eventName</b> <code>{String}</code>: <p>The event type.</p>
+</li>
+        
+          <li><b>selector</b> <code>{CSSSelectorString}</code>: <p>The selector preceding the event in the binding used on the Control.</p>
+</li>
+        
+          <li><b>handler</b> <code>{function(element, event)}</code>: <p>The callback function being bound.</p>
+</li>
+        
+          <li><b>control</b> <code>{<a href="can.Control.html" >can.Control</a>}</code>: <p>The Control the event is bound on.</p>
+</li>
+        
+      </ol>
+  </div>
+  
+  
+  
+  <ul>
+      <li><b>returns</b>  <code>{function}</code>: <p>A callback function that unbinds any event handlers bound within this processor.</p>
+ </li>
+  </ul>
+  
+  
+  
+</div>
+    
+    
+    
+
+
+    	
+    		
+    	
+
+    </article>
+  </div>
+</div>
+
+  <footer><p>CanJS is part of <a href="http://donejs.com">DoneJS</a>. Created and maintained by the open source team at <a href="http://bitovi.com">Bitovi</a>. <strong>Currently v3.0.0.</strong></p></footer>
+	<script type="text/javascript">
+		var docObject = {"content":"<div class=\"main-container\">\n  \n  \t<nav class=\"sidebar\">\n    \n        \n\n    \n</nav>\n  \n\n  <div class=\"content-container\">\n    <article>\n    \t\n    \t\t<section class=\"title\">\n\t<h1>can.Control.processor</h1>\n</section>\n\n    \t\n\n        \n\n    \t\n    \t\t\n    \t\t\t<section class=\"description\">\n    <p>A function that handles the binding and unbinding of a <a href=\"can.Control.html\">can.Control</a>'s declarative event method.</p>\n\n</section>\n\n    \t\t\n    \t\n\n    \n    \n    \n    <div class=\"signature\">\n  <h2 class=\"signature-title\"><code>function(element, eventName, selector, handler, <a href=\"can.Control.html\" >control</a>)</code></h2>\n  \n  \n  \n  <div class=\"parameters\">\n    <h3 class=\"parameters-title\">Parameters</h3>\n      <ol>\n        \n          <li><b>element</b> <code>{HTMLElement}</code>: <p>the control's element or the object\nspecified by the templated event handler (<code>&quot;{object}&quot;</code>).</p>\n</li>\n        \n          <li><b>eventName</b> <code>{String}</code>: <p>The event type.</p>\n</li>\n        \n          <li><b>selector</b> <code>{CSSSelectorString}</code>: <p>The selector preceding the event in the binding used on the Control.</p>\n</li>\n        \n          <li><b>handler</b> <code>{function(element, event)}</code>: <p>The callback function being bound.</p>\n</li>\n        \n          <li><b>control</b> <code>{<a href=\"can.Control.html\" >can.Control</a>}</code>: <p>The Control the event is bound on.</p>\n</li>\n        \n      </ol>\n  </div>\n  \n  \n  \n  <ul>\n      <li><b>returns</b>  <code>{function}</code>: <p>A callback function that unbinds any event handlers bound within this processor.</p>\n </li>\n  </ul>\n  \n  \n  \n</div>\n    \n    \n    \n\n\n    \t\n    \t\t\n    \t\n\n    </article>\n  </div>\n</div>\n","src":{"path":"node_modules/can-control/control.processor.md"},"description":"A function that handles the binding and unbinding of a [can.Control]'s declarative event method. \n","type":"typedef","title":"","types":[{"type":"function","returns":{"types":[{"type":"function","returns":{"types":[{"type":"undefined"}]},"params":[]}],"description":"A callback function that unbinds any event handlers bound within this processor.\n"},"params":[{"types":[{"type":"HTMLElement"}],"name":"element","description":"the control's element or the object \nspecified by the templated event handler (`\"{object}\"`).\n"},{"types":[{"type":"String"}],"name":"eventName","description":"The event type.\n"},{"types":[{"type":"CSSSelectorString"}],"name":"selector","description":"The selector preceding the event in the binding used on the Control.\n"},{"types":[{"type":"function","returns":{"types":[{"type":"undefined"}]},"params":[{"types":[{"type":"Object","options":[]}],"name":"element","description":"foo"},{"types":[{"type":"Event"}],"name":"event","description":"bar\n"}],"context":{"types":[{"type":"can.Control"}]}}],"name":"handler","description":"The callback function being bound.\n"},{"types":[{"type":"can.Control"}],"name":"control","description":"The Control the event is bound on.\n"}]}],"name":"can.Control.processor","_curParam":{"types":[{"type":"can.Control"}],"name":"control","description":"The Control the event is bound on.\n"},"_curReturn":{"types":[{"type":"function","returns":{"types":[{"type":"undefined"}]},"params":[]}],"description":"A callback function that unbinds any event handlers bound within this processor.\n"}};
+	</script>
+
+	
+		<script>
+		  steal = {
+		    instantiated: {
+		      "bundles/bit-docs-site/static.css!$css" : null
+		    }
+		  }
+		</script>
+		<script type='text/javascript'
+				data-main="bit-docs-site/static"
+				src="./static/node_modules/steal/steal.production.js"></script>
+	
+</body>
+
+</html>
